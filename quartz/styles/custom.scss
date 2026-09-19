@@ -1,4 +1,4 @@
-$ui-font: "Archivo", sans-serif;
+$ui-font: "Freight Sans", sans-serif;
 $body-font: "Freight Sans Book", sans-serif;
 
 body,
@@ -81,6 +81,13 @@ svg {
 @font-face {
   font-family: "Freight Sans Book";
   src: url("/static/fonts/Freight Sans W01 Book.ttf") format("truetype");
+  font-weight: 450;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Freight Sans Light";
+  src: url("/static/fonts/Freight Sans W01 Light.ttf") format("truetype");
   font-weight: 450;
   font-style: normal;
   font-display: swap;
