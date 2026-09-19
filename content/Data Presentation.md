@@ -3,16 +3,14 @@ publish: true
 title: Presenting Data
 description: Techniques for making numbers visceral and memorable
 created: 2026-03-30
-modified: 2026-09-18T08:24:39.293Z
+modified: 2026-09-19T10:59:52.217Z
 ---
 
 ## Preparation and Structure
 
-- Decide if you are leading the audience to a specific conclusion (**explanatory**) or if you're providing them with neutral information to discover their own insights (**exploratory**).
-
-- **Tailor your message to the audience**, their specific issues, data literacy, time constraints, and required level of detail. Use the “Elevator Pitch” test: can you explain your core finding in 30–60 seconds?
-
-- Structure your presentation using a framework, like:
+- Decide if you are leading the audience to a specific conclusion (_explanatory_) or if you're providing them with neutral information to discover their own insights (_exploratory_).
+- **Tailor your message to the audience**, their specific issues, data literacy, time constraints, and required level of detail. Try the “Elevator Pitch” and explain your core findings in 30–60 seconds, to yourself or friends beforehand.
+- Use a framework to structure your arguments like:
   - What? → So What? → Now What?
   - PREP (Point, Reason, Example, Point)
   - AMEN (Audience, Message, Examples, Negatives)
@@ -21,7 +19,7 @@ modified: 2026-09-18T08:24:39.293Z
 
 ## Open with Impact
 
-Break passive listening patterns and establishing immediate relevance with some simple techniques. For example:
+Wake up the audience, by tickling their brains.
 
 - **Break expectations** by first creating them and then revealing data that runs counter or surpasses the expected.
 - **Create narrative tension** with alternative hypotheses or unanswered questions keeping the audience engaged.
@@ -39,12 +37,13 @@ A major barrier in data presentation is information overload. Stick to these gui
 
 ## Speech and Presence
 
-How you deliver your speech is as important as the message itself:
+How you deliver your speech is as important as the message itself.
 
-- **Timing and pacing of speech** can be used to explain complex ideas (slow, “think time”) or create a rhythm according to the narrative. Running through your slides hastily exhausts everyone.
+- **Timing and pacing of speech** can be used to explain complex ideas (giving “think time”) or create a rhythm according to the narrative. Running through your slides hastily however will exhaust you and everyone else.
 - **Strategic silence** also helps to emphasize key points, allow listeners to process information, and build anticipation.
 - **Refrain from 'hedging'** with excessive use of “maybe” or “I think”.
-- Keep it authentic, rehearsal helps but robotic gestures, canned speech patterns, empty phrases and studies gestures feel hypocritical.
+- Some suggest recording and listening to yourself and then fix your hedging and filler word. I don't like to hear myself. So I rather try to be aware of undesirable speech patterns and remedy them one by one.
+- Keep it authentic, rehearsal helps but robotic gestures, canned speech patterns, empty phrases and studied gestures feel hypocritical.
 - That said body language, eye-contact, expressions and gestures can make or break your speech. The moment you relax and behave in a natural, amenable manner this will come to pass, so don’t stress about it in the beginning.
 
 ## Engagement
