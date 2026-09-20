@@ -58,10 +58,13 @@ npx quartz build --serve --watch \
 	--wsPort 3002
 ```
 
-Open `http://localhost:8081/typography`.
+Or run `npm run lab`.
 
-Edit `quartz/styles/custom.scss`; the lab rebuilds in under a second and does not parse the full
-`content/` directory. The lab is for local testing only and is not deployed as the site.
+Open `http://localhost:8081/`. The lab page is at the root so you do not need to type `/typography`.
+
+Edit `quartz/styles/custom.scss`; the watcher rebuilds and reloads the page automatically. If an old
+server is already using port 8081, stop it before running the lab command again. The lab is for local
+testing only and is not deployed as the site.
 
 ## Current Typography
 
