@@ -59,17 +59,38 @@ body {
 .text-md { font-size: 1rem; }
 .font-typewriter { font-family: var(--codeFont); }
 
+code { font-size: 1rem; }
+pre > code { font-size: 1.1rem; }
+
+
 svg {
   --svg-link: var(--tertiary);
 }
-
 @font-face {
-  font-family: "Archivo";
-  src: url("/static/fonts/ArchivoBlack-Regular.ttf") format("truetype");
-  font-weight: 700;
+  font-family: "Geist Mono";
+  src: url("/static/fonts/GeistMonoNerdFontMono-Regular.otf") format("opentype");
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/static/fonts/GeistMonoNerdFontMono-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/static/fonts/GeistMonoNerdFontMono-SemiBold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 @font-face {
   font-family: "Freight Sans";
   src: url("/static/fonts/Freight Sans.ttf") format("truetype");

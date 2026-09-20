@@ -25,6 +25,10 @@ const typography = "deliberate";
 console.log(typography);
 ```
 
+```python
+df = pd.read_csv()
+```
+
 | Element | What to inspect |
 | --- | --- |
 | Body text | Line height and reading width |
