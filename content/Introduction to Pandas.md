@@ -2,7 +2,7 @@
 publish: true
 title: Introduction to Pandas
 created: 2026-09-19T14:24:03.929Z
-modified: 2026-09-19T18:52:52.960Z
+modified: 2026-09-20T08:10:54.898Z
 tags:
   - draft
 ---
@@ -11,9 +11,9 @@ Pandas is an open-source Python library built for data manipulation and analysis
 
 Pandas integrates seamlessly with Machine Learning and Visualization libraries like NumPy, Scikit-learn, and TensorFlow, Matplotlib, Seaborn, making it the essential starting point in nearly every data workflow.
 
-Pandas works in-memory and is designed for quick, flexible data manipulation—ideal for small to medium datasets. Once the data is loaded in your RAM, you can do iterative data experiments and integrate with Python ecosystem.
+Pandas works in-memory and is designed for quick, flexible data manipulation—ideal for small to medium datasets. Once the data is loaded in your RAM, you can do iterative data experiments and integrate your cleaned data with the Python ecosystem.
 
-SQL on the other hand talks to relational databases and is optimized for large scale queries and persistent storage.
+SQL on the other hand talks to relational databases and is optimized for large scale queries and persistent storage. SQL is the stricter, more secure and heavy-weight workhorse for databases. You can do a lot of analysis in SQL, directly communication with vast databases, but once you have the data you need you are better off moving it to pandas for more agile work.
 
 # Load and Inspect
 
