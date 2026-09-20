@@ -2,6 +2,7 @@
 .gitignore
 node_modules
 public
+public-typography-lab/
 prof
 tsconfig.tsbuildinfo
 .obsidian
