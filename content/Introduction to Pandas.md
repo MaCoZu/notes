@@ -2,7 +2,7 @@
 publish: true
 title: Introduction to Pandas
 created: 2026-09-19T14:24:03.929Z
-modified: 2026-09-19T18:46:52.307Z
+modified: 2026-09-19T18:52:52.960Z
 tags:
   - draft
 ---
@@ -217,3 +217,10 @@ df.loc[1000]
 ```
 
 …. to be continued …
+
+## Sources
+
+10 minutes to pandas
+https://pandas.pydata.org/docs/user\_guide/10min.html#min
+
+Mhadi, Hussein (2026, Feb 26). _Mastering Pandas-Part 1: Reading, Sorting & Displaying Data_. Medium. https://blog.gopenai.com/mastering-pandas-part-1-reading-sorting-displaying-data-4de39bb4c9c4?gi=5ceb1ef9361f\&source=user\_profile\_page---------1-------------70b422af101d----------------------
