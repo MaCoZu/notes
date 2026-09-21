@@ -2,7 +2,7 @@
 publish: true
 title: Memorable Math
 created: 2026-09-19T18:53:50.447Z
-modified: 2026-09-20T08:00:58.336Z
+modified: 2026-09-21T09:55:36.543Z
 tags:
   - draft
   - todo
@@ -33,13 +33,24 @@ Experts poring over a problem for month on end, may lose the sense of how little
 
 ## Comparisons
 
-Let’s assume your mother is afraid about dying in a plane crash, and you can not move her to visit you in your new home on the Galápagos Islands. You tell her about the [0.000001% chance](https://flyfright.com/plane-crash-statistics/) of dying in a plane crash to no avail. A chance is chance and our mother is not going to gamble with god. Your mom would have no problem to visit you by car though. Thus, a little comparison comes in handy, you can tell her that driving to the airport terminal is statistically a 1000 more deadly than flying.
+Let’s assume your mother is afraid about dying in a plane crash, and you can not move her to visit you in your new home on the Galápagos Islands. You tell her about the [0.000001% chance](https://flyfright.com/plane-crash-statistics/) of dying in a plane crash to no avail. You mothers says “a chance is chance” and she is not going to gamble with god. But she would have no difficulty to visit you by car. A little comparison comes in handy, you may tell her that driving to the airport terminal is statistically a 1000 more deadly than flying.
 
 Or think about the outrageous costs of military equipment, like the \$143 million for one high-end fighter jet (F-22 Raptor). If you don’t have a good grasp of what 1m of public money can buy, the figure is just smoke and mirrors. The extremely inefficient weapons manufacturers can sell almost anything on behalf of national security, and the Raptor is a [prime example of squander](https://militarymachine.com/f-22-cost).
 
-For the taxpayer concerned with security, it might be of interest that $143 Million can buy 14,300 Feilong-300 D Chinese suicide drones for $10,000 per piece. That is fourteen thousand and three hundredth drones versus one single fighter jet.
+For the taxpayer concerned with security, it might be of interest that \$143 Million can buy 14,300 Feilong-300 D Chinese suicide drones for \$10,000 per piece. That is fourteen thousand and three hundredth drones versus one single fighter jet.
 
 For a more peace loving citizen, \$143 Million can be compared with 3 million vaccinated children or 4 apartment complexes, providing homes for 400 families that one could build with this amount of money.
+
+## Concretize
+
+Another tip from Heath and Starr is to favor concrete number over fractions. Saying 2 out of 5 is more palpable than $2/5$.
+And percentages become more real when illustrated as a basket of objects: ‘2 in 500’ is imaginable while 0.4% is more abstract.
+
+Similar to a basket one can ‘chunk’ data into customary units like one day, one game, or one person.‘50 murdered people, every day’ may feel more real than ‘1 murder every 30 minutes’. Two 20 points per game (30 min), are more tangible than 0.67 points per minute for people not too familiar with basketball.
+
+If you cannot avoid fractions, ‘round with enthusiasm’ and have no more than two decimals.
+
+To come to grips with large numbers, one can break them up into digestible morsels. For example convert the time into the unit of ‘lifetime spent’. Again translate lifetime spent into ‘money lost’, say for the time you spent stuck in traffic, not working instead.
 
 # Sources:
 
