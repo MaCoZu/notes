@@ -2,7 +2,7 @@
 publish: true
 title: Design Principles for Data Viz
 created: 2026-09-17T13:50:09.258Z
-modified: 2026-09-21T10:29:28.903Z
+modified: 2026-09-21T13:27:57.786Z
 tags:
   - data
   - viz
@@ -86,3 +86,5 @@ Everyone concerned with predictions, from statisticians to political analysts, w
 Chances are that you were asked about your need for cognitive closure in some job related context:
 
 > “How do you handle situations where you have incomplete information, and how do you determine when you have 'enough' data to proceed?”
+
+## Cognitive Entrecnhment
