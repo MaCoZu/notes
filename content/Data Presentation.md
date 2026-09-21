@@ -3,7 +3,7 @@ publish: true
 title: Presenting Data
 description: Techniques for making numbers visceral and memorable
 created: 2026-03-30
-modified: 2026-09-19T10:59:52.217Z
+modified: 2026-09-21T10:01:00.418Z
 ---
 
 ## Preparation and Structure
@@ -31,8 +31,8 @@ A major barrier in data presentation is information overload. Stick to these gui
 
 - **Get to the point quickly** to keep the audience engaged.
 - **Add detail sparingly**, gradually or only on demand.
-- **Use a visual hierarchy and clean designs.** White space, short paragraphs, alignment, and other [Design Principles](/Notes/notes/principles) help with information processing and respect the recipient's time.
-- Turn math into something memorable. E.g., tangible things and common knowledge. → [Memorable Math](/Notes/notes/communicate_numbers_1)
+- **Use a visual hierarchy and clean designs.** White space, short paragraphs, alignment, and other [Design Principles](Design%20Principles%20for%20Data%20Visualization.md) help with information processing and respect the recipient's time.
+- Turn math into something memorable. E.g., tangible things and common knowledge. → [Make numbers count](Make%20numbers%20count.md)
 - Make your graphs with consideration for your audiences time and attention. → [Charitable Charts](/Notes/notes/communicating_numbers_2)
 
 ## Speech and Presence
