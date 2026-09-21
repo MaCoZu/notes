@@ -2,7 +2,7 @@
 publish: true
 title: Design Principles for Data Viz
 created: 2026-09-17T13:50:09.258Z
-modified: 2026-09-17T21:12:59.414Z
+modified: 2026-09-21T10:29:28.903Z
 tags:
   - data
   - viz
@@ -14,10 +14,10 @@ Things should be designed to be usable, without modification, by as many people 
 
 There are four characteristics of accessible designs:
 
-1. _Perceptibility_ — everyone can perceive the design, regardless of sensory abilities.
-2. _Operability_ — everyone can use the design, regardless of physical abilities.
-3. _Simplicity_ — everyone can easily learn and understand the design, regardless of experience, literacy, or concentration level.
-4. _Forgiveness_ — designs minimize the occurrence and consequences of errors.
+1. **Perceptibility** — everyone can perceive the design, regardless of sensory abilities.
+2. **Operability** — everyone can use the design, regardless of physical abilities.
+3. **Simplicity** — everyone can easily learn and understand the design, regardless of experience, literacy, or concentration level.
+4. **Forgiveness** — designs minimize the occurrence and consequences of errors.
 
 ## Ackoff’s Law
 
@@ -27,25 +27,29 @@ Ackoff’s law states that doing the wrong things, even if perfectly executed, w
 
 ## Aesthetic-Usability Effect
 
-Aesthetic things are subjectively perceived as easier to use than ugly ones.
-
-People are more likely to accept, care for, keep, display, and repeatedly use aesthetic things.
+Aesthetic things are subjectively perceived as easier to use than ugly ones. Additionally, people are more likely to accept, care for, keep, display, and repeatedly use things that are aesthetic.
 
 ## Affordance
 
 Simply put, a thing has good affordance if it does what it looks like.
 
-More precise: if the form and features of a thing make it well suited for its intended use affordances are good. It will seem inconceivable that a thing can function or be used otherwise.
+To be more precise, psychologist James J. Gibson developed the term, describing affordances as the possible ways an animal can interact with its environment, according to its selective and changing needs. For example an infant uses a tooth brush unlike an adult, and by learning the conventional meaning of an object the “child enters into the shared practices of society”.
+
+In his book “The Design of Everyday Things” Donald Norman defines affordances as action possibilities and adds the concept of signifiers to elicit these possibilities.
+
+> “Affordances define what actions are possible. Signifiers specify how people discover those possibilities: signifiers are signs, perceptible signals of what can be done. Signifiers are of far more importance to designers than are affordances.”
 
 ## Alignment
 
 The arrangement of elements along a common axis based on their edges, centers, or areas.
 
+Elements are often aligned according to grid systems, while grids don’t have to be rectangular.
+
 Aligned elements appear more stable, cohesive and united, while the users eyes are guided along predictable lines connecting the dots.
 
-Elements are regularly aligned by their edges and axes in symmetry. Sometimes however you want to balance the perceived weight of related parts. This is often done best by eye, especially if the elements have irregular shapes.
+While elements are frequently aligned symmetrically by their edges and axes, sometimes it is advised to align by eye, balancing out extending parts or irregular shapes of a design. Like the serif of a capital T. When aligning a T with an M on the left edge, shifting the T slightly to the left, alleviates the empty space between the left edge and the stem of the T.
 
-Alignment does not have to be to the right, center, or left. There are also grid systems, circular alignments and many more.
+![400](images/Design Principles for Data Visualization - alignment.png)
 
 ## Anchoring
 
