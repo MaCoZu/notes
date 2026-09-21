@@ -3,7 +3,7 @@ publish: true
 title: Presenting Data
 description: Techniques for making numbers visceral and memorable
 created: 2026-03-30
-modified: 2026-09-21T10:01:00.418Z
+modified: 2026-09-21T10:28:23.639Z
 ---
 
 ## Preparation and Structure
@@ -33,7 +33,7 @@ A major barrier in data presentation is information overload. Stick to these gui
 - **Add detail sparingly**, gradually or only on demand.
 - **Use a visual hierarchy and clean designs.** White space, short paragraphs, alignment, and other [Design Principles](Design%20Principles%20for%20Data%20Visualization.md) help with information processing and respect the recipient's time.
 - Turn math into something memorable. E.g., tangible things and common knowledge. → [Make numbers count](Make%20numbers%20count.md)
-- Make your graphs with consideration for your audiences time and attention. → [Charitable Charts](/Notes/notes/communicating_numbers_2)
+- Make your graphs with consideration for your audiences time and attention. → [Data Presentation](Data%20Presentation.md)
 
 ## Speech and Presence
 
@@ -50,7 +50,7 @@ How you deliver your speech is as important as the message itself.
 
 Make your presentation a two-way transaction. Facilitate sense-making and exploring the topic for your audience.
 
-- People grasp data better when it is described in terms of situations they can imagine or people they can relate to. → [Memorable Math](/Notes/notes/communicate_numbers_1)
+- People grasp data better when it is described in terms of situations they can imagine or people they can relate to. → [Make numbers count](Make%20numbers%20count.md)
 - Provide a high-level overview first, then allow the audience to zoom and filter, and finally provide details on demand. → [Schneiderman's Mantra](https://www.cs.umd.edu/~ben/papers/Shneiderman1996eyes.pdf)
 - [Induce critical thinking](https://www.thinkinghabitats.com/blog/educational-tools-and-techniques-for-promoting-critical-thinking) with Socratic questions, undermining expectations or even using hard-to-read fonts.
 
