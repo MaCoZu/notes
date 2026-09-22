@@ -2,7 +2,7 @@
 publish: true
 title: Design Principles for Data Viz
 created: 2026-09-17T13:50:09.258Z
-modified: 2026-09-21T13:27:57.786Z
+modified: 2026-09-22T07:36:35.356Z
 tags:
   - data
   - viz
@@ -49,7 +49,7 @@ Aligned elements appear more stable, cohesive and united, while the users eyes a
 
 While elements are frequently aligned symmetrically by their edges and axes, sometimes it is advised to align by eye, balancing out extending parts or irregular shapes of a design. Like the serif of a capital T. When aligning a T with an M on the left edge, shifting the T slightly to the left, alleviates the empty space between the left edge and the stem of the T.
 
-![400](images/Design Principles for Data Visualization - alignment.png)
+![[images/Design Principles for Data Visualization - alignment.png|400]]
 
 ## Anchoring
 
