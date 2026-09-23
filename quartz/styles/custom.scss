@@ -23,9 +23,9 @@ article {
   }
 
   p, li {
-    font-size: 1.4rem;
-    line-height: 1.4;
-    letter-spacing: 0.04em;
+    font-size: 1.3rem;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
     word-spacing: 0.03em;
   }
 
@@ -40,7 +40,8 @@ article {
 }
 
 body {
-  font-size: 16px;
+  font-size: 17px;
+  --color: var(--secondary);
   --line-height: 1.3;
   --letter-spacing: -0.08em;
 }
@@ -59,8 +60,8 @@ body {
 .text-md { font-size: 1rem; }
 .font-typewriter { font-family: var(--codeFont); }
 
-code { font-size: 1.05rem; }
-pre > code { font-size: 1.2rem; }
+code { font-size: 1.1rem; }
+pre > code { font-size: 1.3rem; }
 
 
 svg {
