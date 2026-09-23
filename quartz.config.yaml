@@ -171,8 +171,8 @@ plugins:
         linkDistance: 30
         fontSize: 0.6
         opacityScale: 1
-        removeTags: ["status/todo", "status/draft", "type/private", "type/internal"],
-        showTags: false, // Set to false to hide tag nodes entirely
+        removeTags: ["status/todo", "status/draft", "type/private", "type/internal"]
+        showTags: false
         enableRadial: false
       globalGraph:
         drag: true
@@ -184,7 +184,7 @@ plugins:
         linkDistance: 30
         fontSize: 0.6
         opacityScale: 1
-        removeTags: ["status/todo", "status/draft", "type/private", "type/internal"],
+        removeTags: ["status/todo", "status/draft", "type/private", "type/internal"]
         showTags: true
         focusOnHover: true
         enableRadial: true

@@ -59,8 +59,8 @@ body {
 .text-md { font-size: 1rem; }
 .font-typewriter { font-family: var(--codeFont); }
 
-code { font-size: 1rem; }
-pre > code { font-size: 1.1rem; }
+code { font-size: 1.05rem; }
+pre > code { font-size: 1.2rem; }
 
 
 svg {
@@ -68,7 +68,7 @@ svg {
 }
 @font-face {
   font-family: "Geist Mono";
-  src: url("/static/fonts/GeistMonoNerdFontMono-Regular.otf") format("opentype");
+  src: url("static/fonts/GeistMonoNerdFontMono-Regular.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -76,7 +76,7 @@ svg {
 
 @font-face {
   font-family: "Geist Mono";
-  src: url("/static/fonts/GeistMonoNerdFontMono-Medium.otf") format("opentype");
+  src: url("static/fonts/GeistMonoNerdFontMono-Medium.otf") format("opentype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -84,7 +84,7 @@ svg {
 
 @font-face {
   font-family: "Geist Mono";
-  src: url("/static/fonts/GeistMonoNerdFontMono-SemiBold.otf") format("opentype");
+  src: url("static/fonts/GeistMonoNerdFontMono-SemiBold.otf") format("opentype");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -93,7 +93,7 @@ svg {
 
 @font-face {
   font-family: "Freight Sans";
-  src: url("/static/fonts/Freight Sans.ttf") format("truetype");
+  src: url("static/fonts/Freight Sans.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -101,14 +101,14 @@ svg {
 
 @font-face {
   font-family: "Freight Sans Book";
-  src: url("/static/fonts/Freight Sans W01 Book.ttf") format("truetype");
+  src: url("static/fonts/Freight Sans W01 Book.ttf") format("truetype");
   font-weight: 450;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Freight Sans Light";
-  src: url("/static/fonts/Freight Sans W01 Light.ttf") format("truetype");
+  src: url("static/fonts/Freight Sans W01 Light.ttf") format("truetype");
   font-weight: 450;
   font-style: normal;
   font-display: swap;
