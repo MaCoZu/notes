@@ -3,7 +3,7 @@ publish: true
 title: Clean Charts
 description: Choosing the right charts and cleaning them.
 created: 2026-03-31
-modified: 2026-09-25T12:48:29.666Z
+modified: 2026-09-25T12:49:48.548Z
 tags:
   - topic/design
 ---
@@ -14,7 +14,7 @@ _Tables_ are ideal to look up individual values. The ‘tabular’ format of row
 
 _Graphs_ however reveal the shape of the data, which can not easily be gleaned by looking at a table.
 
-![[images/table_vs_graph.png|500]]
+![[images/table_vs_graph.png|600]]
 
 ## Quantitative vs. Categorical Data
 
@@ -36,7 +36,7 @@ Numbers become meaningful when compared to related numbers. One of the most effe
 
 For example, the larger circle has 16 times the area of the smaller circle. Most viewers will underestimate the difference. Curved edges and the lack of a baseline lead to a consistent underestimation of the actual percentages (Cleveland & McGill, 1984).
 
-![[images/Clean Charts - circle size.png|300]]
+![[images/Clean Charts - circle size.png|400]]
 
 Certain relationships lend themselves to specific chart types better than others.
 
