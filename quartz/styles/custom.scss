@@ -63,6 +63,11 @@ body {
 code { font-size: 1.1rem; }
 pre > code { font-size: 1.3rem; }
 
+article img {
+  display: block;
+  margin-inline: auto;
+}
+
 
 svg {
   --svg-link: var(--tertiary);
