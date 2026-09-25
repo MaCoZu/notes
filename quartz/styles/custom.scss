@@ -67,6 +67,22 @@ pre > code { font-size: 1.3rem; }
 svg {
   --svg-link: var(--tertiary);
 }
+
+.page-title a {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.page-title a::before {
+  content: "";
+  width: 22px;
+  height: 24px;
+  flex-shrink: 0;
+  background-color: var(--dark);
+  -webkit-mask: url("static/mz_logo.svg") center / contain no-repeat;
+  mask: url("static/mz_logo.svg") center / contain no-repeat;
+}
 @font-face {
   font-family: "Geist Mono";
   src: url("static/fonts/GeistMonoNerdFontMono-Regular.otf") format("opentype");

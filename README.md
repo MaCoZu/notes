@@ -53,14 +53,16 @@ The full site can take time to rebuild. Use the one-page lab while changing typo
 ```bash
 npx quartz build --serve --watch \
 	-d typography-lab \
-	-o public-typography-lab \
-	--port 8081 \
-	--wsPort 3002
+		-o public-typography-lab \
+			--port 8081 \
+				--wsPort 3002 \
+	--baseDir /typography
 ```
 
 Or run `npm run lab`.
 
-Open `http://localhost:8081/`. The lab page is at the root so you do not need to type `/typography`.
+Open `http://localhost:8081/typography/`. The lab lives at the `/typography` path so it never
+collides with the site served at the root on another port.
 
 Edit `quartz/styles/custom.scss`; the watcher rebuilds and reloads the page automatically. If an old
 server is already using port 8081, stop it before running the lab command again. The lab is for local

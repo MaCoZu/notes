@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: MZ Notes
+  pageTitle: Notes
   pageTitleSuffix: ""
   enableSPA: true
   enablePopovers: true
@@ -251,11 +251,10 @@ plugins:
       position: afterBody
       priority: 10
   - source: "@quartz-community/footer"
-    enabled: false
+    enabled: true
     options:
       links:
-        GitHub: https://github.com/jackyzha0/quartz
-        Discord Community: https://discord.gg/cRFFHYye7t
+        MZ Notes: https://macozu.github.io/notes/
     layout:
       position: footer
       priority: 50
