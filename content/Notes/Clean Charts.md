@@ -3,12 +3,12 @@ publish: true
 title: Clean Charts
 description: Choosing the right charts and cleaning them.
 created: 2026-03-31
-modified: 2026-09-25T12:41:20.009Z
+modified: 2026-09-25T12:48:29.666Z
 tags:
   - topic/design
 ---
 
-### Tables vs. Graphs:
+## Tables vs. Graphs:
 
 _Tables_ are ideal to look up individual values. The ‘tabular’ format of rows and columns facilitates tracing the information.
 
@@ -16,7 +16,7 @@ _Graphs_ however reveal the shape of the data, which can not easily be gleaned b
 
 ![[images/table_vs_graph.png|500]]
 
-### Quantitative vs. Categorical Data
+## Quantitative vs. Categorical Data
 
 _Quantitative data_ is numerical information that can be measured or counted.
 
@@ -30,7 +30,7 @@ _Qualitative data_ can still be categorized by its [level of measurement](https:
 - _Ordinal data_ → has a natural order or ranking (unsatisfied, neutral, satisfied). But the difference between these ranks is either not measurable, unequal or meaningless.
 - _Interval data_ → consists of quantitative data but collected into equal intervals like $[10°C-20°C], [20°C-30°C]$. Interval data can be ranked and the difference between data points is measurable. But intervals lack a true zero point, in the case of degrees $0°C$ does not mean the absence of temperature. Also, a multiplication or division is not meaningful, $20°C\,(68°F)$ is not twice as much as $10°C\,(50°F)$, because the ratio changes depending on the scale.
 
-### Displaying Data
+## Displaying Data
 
 Numbers become meaningful when compared to related numbers. One of the most effective ways to compare quantitative data is to juxtapose two dimensions on a Cartesian coordinate system, or x-y plane. This works well because the eye immediately grasps the line length and 2D position, while areas like boxes of different sizes or slices of a pie are harder to differentiate.
 
@@ -56,7 +56,7 @@ Bars organized around a zero axis (aka Butterfly chart) effectively show deviati
 
 **Box plots** show the distribution of data, similar to histograms, with the additional features like the median, quantiles, and whiskers, all helping the user see the skew and outliers of the distribution more clearly.
 
-### Remove Distraction and “Chart Junk”
+## Remove “Chart Junk”
 
 Anything that does not contribute to the meaning of the data distracts communication. Remove things like bright colors and fancy backgrounds. Subdue grid lines and labels to
 
@@ -66,7 +66,7 @@ Use only 5 to 10 major tick marks on an axis to avoid clutter.
 
 Hide distracting data series, while keeping the accessible on demand, use filters/slicers to allow users to focus or zoom out.
 
-### Readability
+## Readability
 
 - _Highlight_ specific data with contrasting borders, thicker lines, or larger point sizes. Guide the eye to the important stuff.
 - _Label lines directly_ at their endpoints instead of using a distant legend.
