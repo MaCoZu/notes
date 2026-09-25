@@ -2,9 +2,9 @@
 publish: true
 title: Introduction to Pandas
 created: 2026-09-19T14:24:03.929Z
-modified: 2026-09-20T08:10:54.898Z
+modified: 2026-09-24T12:16:12.595Z
 tags:
-  - draft
+  - status/draft
 ---
 
 Pandas is an open-source Python library built for data manipulation and analysis. The term ‘Pandas’ derived from Panel Data a three-dimensional dataset used in econometrics.

@@ -3,9 +3,9 @@ publish: true
 title: Clean Charts
 description: Choosing the right charts and cleaning them.
 created: 2026-03-31
-modified: 2026-09-23T19:04:49.754Z
+modified: 2026-09-25T12:41:20.009Z
 tags:
-  - design
+  - topic/design
 ---
 
 ### Tables vs. Graphs:
@@ -14,7 +14,7 @@ _Tables_ are ideal to look up individual values. The ‘tabular’ format of row
 
 _Graphs_ however reveal the shape of the data, which can not easily be gleaned by looking at a table.
 
-![[images/table_vs_graph.png]]
+![[images/table_vs_graph.png|500]]
 
 ### Quantitative vs. Categorical Data
 
@@ -36,7 +36,7 @@ Numbers become meaningful when compared to related numbers. One of the most effe
 
 For example, the larger circle has 16 times the area of the smaller circle. Most viewers will underestimate the difference. Curved edges and the lack of a baseline lead to a consistent underestimation of the actual percentages (Cleveland & McGill, 1984).
 
-![[images/Clean Charts - circle size.png]]
+![[images/Clean Charts - circle size.png|300]]
 
 Certain relationships lend themselves to specific chart types better than others.
 
@@ -46,7 +46,7 @@ Bars are a means of encoding percentages, while they avoid the visual distortion
 
 Bars organized around a zero axis (aka Butterfly chart) effectively show deviations from a target, such as the break-even point in business or net debt/income.
 
-![[images/Clean Charts - Bars.png]]
+![[images/Clean Charts - Bars.png|500]]
 
 **Points** emphasize individual values, rather than the shape of those values. They can encode values along two quantitative scales simultaneously (correlation) in a scatter plot, and may also replace bars if the scale does not include zero.
 
