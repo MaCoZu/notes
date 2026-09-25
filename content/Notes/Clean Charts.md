@@ -3,7 +3,7 @@ publish: true
 title: Clean Charts
 description: Choosing the right charts and cleaning them.
 created: 2026-03-31
-modified: 2026-09-25T12:49:48.548Z
+modified: 2026-09-25T12:51:18.468Z
 tags:
   - topic/design
 ---
@@ -18,17 +18,17 @@ _Graphs_ however reveal the shape of the data, which can not easily be gleaned b
 
 ## Quantitative vs. Categorical Data
 
-_Quantitative data_ is numerical information that can be measured or counted.
+**Quantitative data** is numerical information that can be measured or counted.
 
-_Qualitative data_ is descriptive information about characteristics that are difficult to describe numerically. These qualities may be represented by a name, symbol, or a number code.
+**Qualitative data** is descriptive information about characteristics that are difficult to describe numerically. These qualities may be represented by a name, symbol, or a number code.
 
 Quantitative and qualitative data are often used together to get a full picture of a population. For example in a survey information about occupation (quality) and income (quantity) complement each other.
 
 _Qualitative data_ can still be categorized by its [level of measurement](https://en.wikipedia.org/wiki/Level_of_measurement).
 
-- _Nominal data_ → are categories without order, like colors or names. They are differentiated by their name (nominally) and analysis is limited to recording the types and frequency.
-- _Ordinal data_ → has a natural order or ranking (unsatisfied, neutral, satisfied). But the difference between these ranks is either not measurable, unequal or meaningless.
-- _Interval data_ → consists of quantitative data but collected into equal intervals like $[10°C-20°C], [20°C-30°C]$. Interval data can be ranked and the difference between data points is measurable. But intervals lack a true zero point, in the case of degrees $0°C$ does not mean the absence of temperature. Also, a multiplication or division is not meaningful, $20°C\,(68°F)$ is not twice as much as $10°C\,(50°F)$, because the ratio changes depending on the scale.
+- **Nominal data** → are categories without order, like colors or names. They are differentiated by their name (nominally) and analysis is limited to recording the types and frequency.
+- **Ordinal data** → has a natural order or ranking (unsatisfied, neutral, satisfied). But the difference between these ranks is either not measurable, unequal or meaningless.
+- **Interval data** → consists of quantitative data but collected into equal intervals like $[10°C-20°C], [20°C-30°C]$. Interval data can be ranked and the difference between data points is measurable. But intervals lack a true zero point, in the case of degrees $0°C$ does not mean the absence of temperature. Also, a multiplication or division is not meaningful, $20°C\,(68°F)$ is not twice as much as $10°C\,(50°F)$, because the ratio changes depending on the scale.
 
 ## Displaying Data
 
