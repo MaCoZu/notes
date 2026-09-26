@@ -72,6 +72,11 @@ article li {
   margin-bottom: 0.6rem;
 }
 
+.katex,
+.katex-display {
+  overflow: visible;
+}
+
 article .katex-display {
   display: block;
   margin: 2.5rem 0;
