@@ -3,7 +3,7 @@ publish: true
 title: Group Activity
 description: How to tackle cognitive biases and data literacy issues.
 created: 2026-09-26T09:33:39.922Z
-modified: 2026-09-26T15:04:27.620Z
+modified: 2026-09-26T15:05:12.639Z
 ---
 
 # Group Activity
@@ -83,7 +83,7 @@ Working in your assigned groups, read the descriptions of two cognitive biases/f
 ### The Fallacy of the Statistical Average
 
 - Assuming that the “average” (mean) represents a real, typical person or scenario, when in reality, almost _nobody_ actually sits at that average point.
-- **Example:** A company boasting that its “average employee salary is $80,000,” when the CEO makes $2,000,000 and 90% of the staff make \$35,000. The “average person” in that calculation doesn't exist.
+- **Example:** A company boasting that its “average employee salary is \$80,000,” when the CEO makes \$2,000,000 and 90% of the staff make \$35,000. The “average person” in that calculation doesn't exist.
 
 ### The Scenario
 
