@@ -69,7 +69,15 @@ article img {
 }
 
 article li {
-  margin-bottom: 0.9rem;
+  margin-bottom: 0.6rem;
+}
+
+article .katex-display {
+  display: block;
+  margin: 2rem 0;
+  text-align: center;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 
