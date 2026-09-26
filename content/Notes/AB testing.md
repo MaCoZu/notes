@@ -2,11 +2,13 @@
 publish: true
 title: AB testing
 created: 2026-09-21T16:17:59.931Z
-modified: 2026-09-26T13:46:00.194Z
+modified: 2026-09-26T14:09:52.628Z
 tags:
   - topic/data
   - status/review
 ---
+
+## A/B Testing
 
 A/B testing, also known as split testing, is a statistical method used to compare two different alternatives (A and B).
 
@@ -54,11 +56,12 @@ H_1: CTR_A \neq CTR_B
 \end{align}
 $$
 
-#### Test Statistic:
+## Test Statistic:
 
 We can use the two-sample Z-test to compare the two proportions. Note that we do not use percentages in the formula but **decimal proportions**.
 
 The test statistic (Z) is calculated as:
+
 $Z = \frac{p_A - p_B}{{\sqrt{\hat{p}(1 - \hat{p}) \left(\frac{1}{n_A} + \frac{1}{n_B}\right)}}}$
 where:
 $p_A$ = $CTR_A$ or percentage of visitors who clicked the button for Group A
@@ -76,7 +79,9 @@ The $\text{Numerator} = p_A - p_B$ compares the independent sample proportions, 
 $H_0: p_A = p_B = p$ is at the same time the assumption and viewpoint of any hypothesis test. And by extension we assume there is only one true underlying conversion rate $p$ from the exact same single pool users. While any difference observed between $p_A$ and $p_B$ is by chance only.
 
 Since $H_0$ assumes $p_A$ and $p_B$ are actually equal to a single value $p$, our best possible estimate of that single true $p$ comes from **combining (pooling) all your data together**:
+
 $\hat{p} = \frac{\text{Total Clicks (Group A + Group B)}}{\text{Total Visitors (Group A + Group B)}} = \frac{x_A + x_B}{n_A + n_B}$
+
 If the difference is $|p_A - p_B|>0$ the assessment of a significant effect depends on the denominator which functions as a scaling unit, it is also called standard error of the difference.
 
 $Z = \frac{\text{Observed Signal}}{\text{Background Noise}} = \frac{\text{Difference in Sample Proportions}}{\text{Pooled Standard Error}}=\frac{p_A - p_B}{{\sqrt{\hat{p}(1 - \hat{p}) \left(\frac{1}{n_A} + \frac{1}{n_B}\right)}}}$
@@ -114,7 +119,7 @@ $Z = \frac{p_A - p_B}{\sqrt{\hat{p}(1 - \hat{p}) \left(\frac{1}{n_A} + \frac{1}{
 
 This $Z$-statistic tells you exactly how many standard errors the observed signal ($p_A - p_B$) is away from 0 (the Null Hypothesis expectation).
 
-#### Critical Region and P-value:
+## Critical Region and P-value:
 
 We can compare the test statistic $(Z)$ to the critical value from the standard normal distribution $(Z_{α/2})$ at the chosen significance level $(α)$.
 
@@ -124,7 +129,7 @@ If the test statistic falls into the critical region $(|Z| > Z_{\alpha/2})$ or i
 
 If the test statistic does not fall into the critical region $(|Z| \leq Z_{\alpha/2})$ or if the p-value is greater than the significance level $(α)$, we fail to reject the null hypothesis, and we cannot conclude that there is a significant difference in the click-through rates between the two groups.
 
-## Python implementation
+## Python Implementation
 
 ```python
 import numpy as np
