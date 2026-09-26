@@ -2,62 +2,94 @@
 publish: true
 title: Group Activity
 description: How to tackle cognitive biases and data literacy issues.
-created: 2026-03-31
-modified: 2026-09-17T21:12:44.854Z
+created: 2026-09-26T09:33:39.922Z
+modified: 2026-09-25T18:01:19.817Z
 ---
 
-### **Group 1: Selective Evidence & Accidental Meaning**
+# Group Activity
 
-#### **Confirmation Bias**
+Working in your assigned groups, read the descriptions of two cognitive biases/fallacies. Use the provided scenario to brainstorm actionable strategies, protocols, or communication habits to prevent, counter, or fix these glitches.
 
-- A tendency to search for, favor, and interpret information in a way that validates pre-existing beliefs while ignoring evidence that contradicts them.
-  → _Find some techniques to break confirmation bias gently?_
-- **Example:** A user searching the internet for "benefits of chocolate for weight loss" while ignoring all medical articles that state the opposite.
+### Group 1: Selective Evidence & Accidental Meaning
 
-#### **Accidental Semantic Proximity**
+#### Confirmation Bias
 
-- Using visual properties like color or layout that carry strong cultural associations, leading the brain to assume a relationship that is not in the data.
-  → _What cultural associations can you think of and how to spot, avoid or handle them?_
-- **Example:** Using **green** for "Population Growth" and **brown** for "Population Decline"; readers may mistakenly assume the brown areas represent **rural or farming land** rather than just a numeric decrease.
+- Seeing only what you want to see. Your brain acts like a lawyer defending your favorite idea—it eagerly collects any data that agrees with you and conveniently ignores everything that doesn't.
+- **Example:** Searching Google for _"Why coffee is amazing for productivity"_ while scrolling past every study showing it increases anxiety.
 
-### **Group 2: The Presentation Frame & Missing Detail**
+#### Accidental Semantic Proximity
 
-#### **Framing Effect**
+- When colors, symbols, or layouts trick the viewer into assuming a hidden meaning that isn't actually in the data.
+- **Example:** A map using **Green** for "Areas with High Air Pollution" and **Red** for "Areas with Low Air Pollution." People glance at it and instantly assume green means "clean and healthy" because green culturally means "go" or "good."
 
-- The tendency for an audience to draw different conclusions from the same data depending on how it is presented, such as emphasizing gains versus losses.
-  → _What are ways to present data / findings more objectively?_
-- **Example:** Reporting that a surgery has a **90% success rate** sounds more positive to a patient than reporting it has a **10% failure rate**.
+#### The Scenario
 
-#### **Inappropriate Level of Abstraction**
+> You are a Data Analyst at an e-commerce company. The Head of Product is convinced that customer satisfaction dropped last quarter solely because of a recent website redesign. She asks you to pull data to "prove" her theory. While building your dashboard, you notice that sales fell, but you accidentally used red to highlight “App Users” and blue for "Website Users." Team members reviewing your draft immediately assumed red meant the app was failing.
 
-- Presenting data either too broadly—which hides important variance—or with too much granular detail, which creates "visual noise" and hides the main message.
-  → _How to balance information overload and vagueness?_
-- **Example:** A political forecast showing a candidate has a "**3% chance of winning**" as a single headline, which hides the complex distribution of possible election outcomes from the public.
+#### Group 1 task
 
-### **Group 3: The Expert Blind Spot & Logic Mismatch**
+1. **Confirmation Bias:** How do you structure your analysis and presentation to gently guide your boss toward looking at _all_ potential causes (e.g., shipping delays, seasonal drops) without making her feel defensive?
+2. **Accidental Semantic Proximity:** What rules or pre-flight checks can a team create for color choices, icons, and chart styles to prevent viewers from jumping to wrong cultural conclusions?
 
-#### **Curse of Knowledge**
+### Group 2: The Presentation Frame & Missing Detail
 
-- The phenomenon where experts, who understand a topic intimately, overestimate how much of their mental model is shared by their audience.
-  → _What can the expert do to avoid going over the audiences heads?_
-- **Example:** A math professor goes over concepts and uses specialized terms without explanation leaving students scratching their heads.
+#### Framing Effect
 
-#### **Semantic Mapping Mismatch**
+- Changing the presentation of the data changes how people _feel_ about the data, even when the numbers are identical.
+- **Example:** A yogurt label proudly boasting **"90% Fat-Free!"** feels like a health food. The exact same yogurt labeled **"Contains 10% Fat!"** feels like a junk food.
 
-- Using visual channels—such as size, orientation, or color—that do not align with the audience's internal mental model of how that concept works.
-  → _What might be the causes and remedies for such misunderstandings?_
-- **Example:** A novice user looking at a **tree map** for the first time and failing to understand that the **area of the boxes** represents a specific numeric value.
+#### Inappropriate Level of Abstraction
 
-### **Group 4: Information Avoidance & The "Average" Myth**
+- Giving people a summary that is too vague to be useful, or dumping so many tiny details on them that their brains shut down from overload.
+- **Example:** Asking how traffic is, and getting either _"It's fine"_ (too vague) or a reading of every single traffic light interval for the next 10 miles (too detailed).
 
-#### **The Ostrich Effect**
+#### The Scenario
 
-- A tendency to intentionally overlook or avoid information that is psychologically uncomfortable or contradicts a desired outcome.
-  → _How to overcome hazardous ignorance in yourself and/or in the audience?_
-- **Example:** An individual **avoiding looking at their bank statement** during a month of high spending because the information is stressful.
+> You are preparing a quarterly safety report for a food manufacturing factory. Over the last three months, 98% of all shifts ran completely accident-free, but 2 severe safety violations did occur. The CEO wants a single slide showing a high-level summary to reassure investors. Meanwhile, the Operations Director wants every single minor incident log printed out on a massive spreadsheet.
 
-#### **The Fallacy of the Statistical Average**
+#### Group 2 Task
 
-- Presenting a "statistical average" as a representative midpoint when, in reality, it may correspond to no actual individual in the dataset.
-  → _How to set the average in context or what can you report instead?_
-- **Example:** The 1940s U.S. Air Force designing cockpits for the **"average pilot"** measurements; when they actually measured 4,000 pilots, they found that **zero individuals** actually fit those average dimensions.
+1. **Framing Effect:** How can you present both the positive safety percentage (98%) and the critical safety events (2 violations) in a way that remains honest and objective, avoiding spin in either direction?
+2. **Inappropriate Level of Abstraction:** What visual techniques or storytelling structures can you use to satisfy both the CEO's need for a high-level picture and the Director's need for actionable detail?
+
+### Group 3: The Expert Blind Spot & Logic Mismatch
+
+#### Curse of Knowledge
+
+- Once you know something deeply, it becomes almost impossible to remember what it felt like _not_ knowing it. You assume everyone understands your shortcut jargon.
+- **Example:** A tech-savvy friend saying, _"Just SSH into the server, update your dotfiles, and re-run the container. It takes two seconds!"_ leaving you completely lost.
+
+#### Semantic Mapping Mismatch
+
+- Using a visual design (like size, shape, or position) that doesn't fit the way humans naturally think about that concept.
+- **Example:** Creating a bar chart where **taller bars represent lower temperatures** (-20°C is a huge tall bar, and +30°C is a tiny bar). It confuses the brain because we naturally connect "higher bar" with "hotter / more."
+
+#### The Scenario
+
+> You are a Senior Data Scientist presenting a machine learning churn prediction model to the Non-Technical Marketing Team. In your slides, you included a Treemap chart where the _area of nested rectangles_ represents budget allocations, and the _color shade_ represents churn risk. During the meeting, the Marketing Manager asks, _"So if I click the biggest box, does that mean those customers are about to leave us?"_
+
+#### Group 3 Task
+
+1. **Curse of Knowledge:** What concrete habits or test runs can data experts use _before_ a meeting to catch advanced jargon or hidden assumptions in their slides?
+2. **Semantic Mapping Mismatch:** How can you re-design or introduce complex chart types (like Treemaps, heatmaps, or bubble charts) so non-technical audiences instantly grasp which visual element matches which metric?
+
+### Group 4: Information Avoidance & The "Average" Myth
+
+#### The Ostrich Effect
+
+- Sticking your head in the sand. Intentionally ignoring uncomfortable data because looking at it causes stress or threatens your current plans.
+- **Example:** Refusing to check your bank account balance after a night out because you know you spent too much and don't want to deal with the guilt.
+
+#### The Fallacy of the Statistical Average
+
+- Assuming that the "average" (mean) represents a real, typical person or scenario, when in reality, almost _nobody_ actually sits at that average point.
+- **Example:** A company boasting that its "average employee salary is $80,000," when the CEO makes $2,000,000 and 90% of the staff make \$35,000. The "average person" in that calculation doesn't exist.
+
+#### The Scenario
+
+> You are a Data Analyst at a university. Enrollment is dropping rapidly among part-time adult students. When you try to bring up the declining numbers during strategy meetings, leadership changes the subject because they are focused on a costly new campus building project. Furthermore, the committee insists on designing new classroom furniture based on the "average student height and weight," ignoring the fact that the student body has two distinct clusters: young teenagers and older adults.
+
+#### Group 4 Task
+
+1. **The Ostrich Effect:** What strategies can you use as a data communicator to make "uncomfortable metrics" impossible to ignore, while framing them constructively so leadership takes action instead of shutting down?
+2. **The Fallacy of the Statistical Average:** How would you explain to the design committee why relying on a single average is dangerous, and what alternative metrics (e.g., medians, percentiles, distributions/clusters) should you report instead?

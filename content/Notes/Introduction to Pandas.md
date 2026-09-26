@@ -2,7 +2,7 @@
 publish: true
 title: Introduction to Pandas
 created: 2026-09-19T14:24:03.929Z
-modified: 2026-09-24T12:16:12.595Z
+modified: 2026-09-25T13:21:54.869Z
 tags:
   - status/draft
 ---
@@ -47,8 +47,8 @@ pd.read_json("file.json")                        # basic read
 pd.read_json("file.json", orient="records")      # list of records format
 
 # HTML
-tables = pd.read_html("file.html")                          # returns list of all tables
-df = pd.read_html("https://website.com/table")[0]       # first table from a URL
+tables = pd.read_html("file.html")               # returns list of all tables
+df = pd.read_html("https://website.com/table")[0]# first table from a URL
 
 # SQL
 import sqlite3
@@ -57,15 +57,15 @@ df = pd.read_sql("SELECT * FROM table", conn)    # full SQL query
 df = pd.read_sql_table("table_name", conn)       # read entire table directly
 
 # Text files
-pd.read_table("file.txt")                      # tab separated (default)
-pd.read_table("file.txt", sep=",")             # comma separated
-pd.read_table("file.txt", sep=";")             # semicolon separated
-pd.read_table("file.txt", sep="|")             # pipe separated
-pd.read_table("file.txt", header=None)         # file has no header row
-pd.read_table("file.txt", names=["col1","col2"])  # add column names manually
-pd.read_table("file.txt", skiprows=2)          # skip first 2 rows
-pd.read_table("file.txt", nrows=100)           # read only 100 rows
-pd.read_fwf("file.txt")                        # fixed-width text file
+pd.read_table("file.txt")                        # tab separated (default)
+pd.read_table("file.txt", sep=",")               # comma separated
+pd.read_table("file.txt", sep=";")               # semicolon separated
+pd.read_table("file.txt", sep="|")               # pipe separated
+pd.read_table("file.txt", header=None)           # file has no header row
+pd.read_table("file.txt", names=["col1","col2"]) # add column names manually
+pd.read_table("file.txt", skiprows=2)            # skip first 2 rows
+pd.read_table("file.txt", nrows=100)             # read only 100 rows
+pd.read_fwf("file.txt")                          # fixed-width text file
 
 # OTHER FORMATS
 pd.read_clipboard() # Clipboard — copy any table, then run this
