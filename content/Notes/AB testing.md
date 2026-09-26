@@ -2,7 +2,7 @@
 publish: true
 title: AB testing
 created: 2026-09-21T16:17:59.931Z
-modified: 2026-09-26T14:09:52.628Z
+modified: 2026-09-26T14:50:14.061Z
 tags:
   - topic/data
   - status/review
@@ -41,11 +41,15 @@ You randomly divide your visitors into two groups:
 
 After a specified period, you compare the percentage of visitors who clicked on the button, the Click-through Rate.
 
-$CTR = \frac{\text{Number of Clicks}}{\text{Number of Visitors}} \times 100$
+$$
+\begin{aligned}
+CTR &= \frac{\text{Number of Clicks}}{\text{Number of Visitors}} \times 100
+\end{aligned}
+$$
 
 But simply comparing percentage wouldn’t be meaningful, because any observed difference between the two samples could be due to random sampling noise. To assess the **statistical significance** of our findings we resort to hypothesis testing.
 
-### [Hypotheses testing](Hypotheses%20testing.md):
+### Hypotheses testing:
 
 In hypothesis testing the null hypothesis ($H_0$) assumes that there is no significant difference between the two groups, while the alternative hypothesis ($H_1$) assumes that there is a significant difference.
 
@@ -62,7 +66,12 @@ We can use the two-sample Z-test to compare the two proportions. Note that we do
 
 The test statistic (Z) is calculated as:
 
-$Z = \frac{p_A - p_B}{{\sqrt{\hat{p}(1 - \hat{p}) \left(\frac{1}{n_A} + \frac{1}{n_B}\right)}}}$
+$$
+\begin{aligned}
+Z &= \frac{p_A - p_B}{{\sqrt{\hat{p}(1 - \hat{p}) \left(\frac{1}{n_A} + \frac{1}{n_B}\right)}}}
+\end{aligned}
+$$
+
 where:
 $p_A$ = $CTR_A$ or percentage of visitors who clicked the button for Group A
 $p_B$ = $CTR_B$,
@@ -70,7 +79,11 @@ $n_A$ = Number of visitors in Group A,
 $n_B$ = Number of visitors in Group B.
 $\hat{p}$ = Pooled proportion
 
-$\hat{p} = \frac{\text{Total Clicks (Group A + Group B)}}{\text{Total Visitors (Group A + Group B)}} = \frac{x_A + x_B}{n_A + n_B}$
+$$
+\begin{aligned}
+\hat{p} &= \frac{\text{Total Clicks (Group A + Group B)}}{\text{Total Visitors (Group A + Group B)}} = \frac{x_A + x_B}{n_A + n_B}
+\end{aligned}
+$$
 
 Let’s understand the Z-score formula as it is an important concept in statistics.
 
@@ -80,11 +93,19 @@ $H_0: p_A = p_B = p$ is at the same time the assumption and viewpoint of any hyp
 
 Since $H_0$ assumes $p_A$ and $p_B$ are actually equal to a single value $p$, our best possible estimate of that single true $p$ comes from **combining (pooling) all your data together**:
 
-$\hat{p} = \frac{\text{Total Clicks (Group A + Group B)}}{\text{Total Visitors (Group A + Group B)}} = \frac{x_A + x_B}{n_A + n_B}$
+$$
+\begin{aligned}
+\hat{p} &= \frac{\text{Total Clicks (Group A + Group B)}}{\text{Total Visitors (Group A + Group B)}} = \frac{x_A + x_B}{n_A + n_B}
+\end{aligned}
+$$
 
 If the difference is $|p_A - p_B|>0$ the assessment of a significant effect depends on the denominator which functions as a scaling unit, it is also called standard error of the difference.
 
-$Z = \frac{\text{Observed Signal}}{\text{Background Noise}} = \frac{\text{Difference in Sample Proportions}}{\text{Pooled Standard Error}}=\frac{p_A - p_B}{{\sqrt{\hat{p}(1 - \hat{p}) \left(\frac{1}{n_A} + \frac{1}{n_B}\right)}}}$
+$$
+\begin{aligned}
+Z &= \frac{\text{Observed Signal}}{\text{Background Noise}} = \frac{\text{Difference in Sample Proportions}}{\text{Pooled Standard Error}}=\frac{p_A - p_B}{{\sqrt{\hat{p}(1 - \hat{p}) \left(\frac{1}{n_A} + \frac{1}{n_B}\right)}}}
+\end{aligned}
+$$
 
 The Numerator ($p_A - p_B$): Uses your **separate sample estimates** to capture the observed signal/difference in your real-world data.
 
@@ -107,15 +128,27 @@ Dividing $\hat{p}(1 - \hat{p})$ by the respective sample sizes ($n_A$ and $n_B$)
 
 Under the rules of probability, when combining two independent random variables, their individual variances add up because uncertainty accumulates from both samples:
 
-$\text{Pooled Variance} = \frac{\hat{p}(1 - \hat{p})}{n_A} + \frac{\hat{p}(1 - \hat{p})}{n_B} = \hat{p}(1 - \hat{p}) \left(\frac{1}{n_A} + \frac{1}{n_B}\right)$
+$$
+\begin{aligned}
+\text{Pooled Variance} &= \frac{\hat{p}(1 - \hat{p})}{n_A} + \frac{\hat{p}(1 - \hat{p})}{n_B} = \hat{p}(1 - \hat{p}) \left(\frac{1}{n_A} + \frac{1}{n_B}\right)
+\end{aligned}
+$$
 
 Finally, taking the square root converts this accumulated variance back into standard units, yielding the **Pooled Standard Error**:
 
-$\text{SE}_{\text{pooled}} = \sqrt{\hat{p}(1 - \hat{p}) \left(\frac{1}{n_A} + \frac{1}{n_B}\right)}$
+$$
+\begin{aligned}
+\text{SE}_{\text{pooled}} &= \sqrt{\hat{p}(1 - \hat{p}) \left(\frac{1}{n_A} + \frac{1}{n_B}\right)}
+\end{aligned}
+$$
 
 Once you divide the numerator ($p_A - p_B$) by this pooled denominator, the output is a dimensionless $Z$-value:
 
-$Z = \frac{p_A - p_B}{\sqrt{\hat{p}(1 - \hat{p}) \left(\frac{1}{n_A} + \frac{1}{n_B}\right)}}$
+$$
+\begin{aligned}
+Z &= \frac{p_A - p_B}{\sqrt{\hat{p}(1 - \hat{p}) \left(\frac{1}{n_A} + \frac{1}{n_B}\right)}}
+\end{aligned}
+$$
 
 This $Z$-statistic tells you exactly how many standard errors the observed signal ($p_A - p_B$) is away from 0 (the Null Hypothesis expectation).
 
