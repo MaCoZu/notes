@@ -2,7 +2,7 @@
 publish: true
 title: AB testing
 created: 2026-09-21T16:17:59.931Z
-modified: 2026-09-26T14:53:11.437Z
+modified: 2026-09-26T14:53:58.449Z
 tags:
   - topic/data
   - status/review
@@ -73,11 +73,12 @@ Z &= \frac{p_A - p_B}{{\sqrt{\hat{p}(1 - \hat{p}) \left(\frac{1}{n_A} + \frac{1}
 $$
 
 where:
-$p_A$ = $CTR_A$ or percentage of visitors who clicked the button for Group A
-$p_B$ = $CTR_B$,
-$n_A$ = Number of visitors in Group A,
-$n_B$ = Number of visitors in Group B.
-$\hat{p}$ = Pooled proportion
+
+- $p_A$ = $CTR_A$ or percentage of visitors who clicked the button for Group A
+- $p_B$ = $CTR_B$,
+- $n_A$ = Number of visitors in Group A,
+- $n_B$ = Number of visitors in Group B.
+- $\hat{p}$ = Pooled proportion
 
 $$
 \begin{aligned}
