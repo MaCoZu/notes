@@ -2,7 +2,7 @@
 publish: true
 title: AB testing
 created: 2026-09-21T16:17:59.931Z
-modified: 2026-09-26T14:50:14.061Z
+modified: 2026-09-26T14:53:11.437Z
 tags:
   - topic/data
   - status/review
@@ -49,7 +49,7 @@ $$
 
 But simply comparing percentage wouldn’t be meaningful, because any observed difference between the two samples could be due to random sampling noise. To assess the **statistical significance** of our findings we resort to hypothesis testing.
 
-### Hypotheses testing:
+## Hypotheses testing:
 
 In hypothesis testing the null hypothesis ($H_0$) assumes that there is no significant difference between the two groups, while the alternative hypothesis ($H_1$) assumes that there is a significant difference.
 
@@ -60,7 +60,7 @@ H_1: CTR_A \neq CTR_B
 \end{align}
 $$
 
-## Test Statistic:
+### Test Statistic:
 
 We can use the two-sample Z-test to compare the two proportions. Note that we do not use percentages in the formula but **decimal proportions**.
 
