@@ -16,6 +16,13 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $ui-font;
 }
 
+
+article,
+.center > .page-header {
+  max-width: 670px;      /* the line length you want */
+  margin-inline: auto;   /* keep it centered in the middle column */
+}
+
 article {
   p, li, blockquote, table {
     font-family: $body-font;
@@ -23,15 +30,16 @@ article {
   }
 
   p, li {
-    font-size: 1.3rem;
-    line-height: 1.2;
-    letter-spacing: 0.03em;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    letter-spacing: 0.015em;
     word-spacing: 0.03em;
   }
 
-  h1, h2, h3, h4 {
+ h1, h2, h3, h4, h5, h6 {
     letter-spacing: -0.01em;
-    line-height: 1.3;
+    line-height: 1.2;
+    margin-bottom: -0.8rem;   /* space under the header */
   }
 
   h1 { font-size: 1.9rem; }
