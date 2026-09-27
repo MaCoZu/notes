@@ -2,7 +2,7 @@
 publish: true
 title: Introduction to Pandas
 created: 2026-09-19T14:24:03.929Z
-modified: 2026-09-26T16:07:47.922Z
+modified: 2026-09-27T06:40:05.175Z
 tags:
   - status/draft
 ---
@@ -36,33 +36,89 @@ To load data into pandas, you use the one of pandas many `read_*()` functions.
 ```python
 import pandas as pd
 
-df = pd.read_csv(...) # genreal loading pattern, df stands for data frame
+# genreal loading pattern, df stands for data frame
+df = pd.read_csv(...) 
+
+
 # CSV
-pd.read_csv("file.csv", header=0)                # first row as header
-pd.read_csv("file.csv", index_col="order_id")    # set column as index
-pd.read_csv("file.csv", nrows=100)               # read only first 100 rows
-pd.read_csv("file.csv", skiprows=2)              # skip first 2 rows
-pd.read_csv("file.csv", usecols=["price","quantity"])  # specific columns only
-pd.read_csv("file.csv", na_values=["NA","?"])    # define missing values
-pd.read_csv("file.csv", sep=";")                 # semicolons instead of commas
+# --------------------------------
+
+# first row as header
+pd.read_csv("file.csv", header=0) 
+
+# set column as index
+pd.read_csv("file.csv", index_col="order_id")   
+
+# read only first 100 rows
+pd.read_csv("file.csv", nrows=100)    
+
+# skip first 2 rows
+pd.read_csv("file.csv", skiprows=2) 
+ 
+# specific columns only           
+pd.read_csv("file.csv", usecols=["price","quantity"]) 
+
+# define missing values
+pd.read_csv("file.csv", na_values=["NA","?"])  
+  
+# semicolons instead of commas
+pd.read_csv("file.csv", sep=";") 
+       
+                         
 # EXCEL
-pd.read_excel("file.xlsx")                       # basic read
-pd.read_excel("file.xlsx", sheet_name="Sheet1")  # specific sheet by name
-pd.read_excel("file.xlsx", sheet_name=0)         # first sheet by index
-pd.read_excel("file.xlsx", skiprows=2)           # skip first 2 rows
-pd.read_excel("file.xlsx", usecols="A:D")        # read columns A to D
+# --------------------------------
+
+# basic read
+pd.read_excel("file.xlsx")         
+
+# specific sheet by name              
+pd.read_excel("file.xlsx", sheet_name="Sheet1")  
+
+# first sheet by index
+pd.read_excel("file.xlsx", sheet_name=0)  
+
+# skip first 2 rows       
+pd.read_excel("file.xlsx", skiprows=2) 
+
+# read columns A to D          
+pd.read_excel("file.xlsx", usecols="A:D")   
+
+          
 # JSON
-pd.read_json("file.json")                        # basic read
-pd.read_json("file.json", orient="records")      # list of records format
+# --------------------------------
+
+# basic read
+pd.read_json("file.json")     
+
+# list of records format                   
+pd.read_json("file.json", orient="records")      
+
+
 # HTML
-tables = pd.read_html("file.html")               # returns list of all tables
-df = pd.read_html("https://website.com/table")[0]# first table from a URL
+# --------------------------------
+
+# returns list of all tables
+tables = pd.read_html("file.html") 
+
+# first table from a URL              
+df = pd.read_html("https://website.com/table")[0]
+
+
 # SQL
+# --------------------------------
 import sqlite3
 conn = sqlite3.connect("database.db")
-df = pd.read_sql("SELECT * FROM table", conn)    # full SQL query
-df = pd.read_sql_table("table_name", conn)       # read entire table directly
+
+# full SQL query
+df = pd.read_sql("SELECT * FROM table", conn)  
+
+# read entire table directly  
+df = pd.read_sql_table("table_name", conn)      
+
+
+
 # Text files
+# --------------------------------
 pd.read_table("file.txt")                        # tab separated (default)
 pd.read_table("file.txt", sep=",")               # comma separated
 pd.read_table("file.txt", sep=";")               # semicolon separated
@@ -72,7 +128,10 @@ pd.read_table("file.txt", names=["col1","col2"]) # add column names manually
 pd.read_table("file.txt", skiprows=2)            # skip first 2 rows
 pd.read_table("file.txt", nrows=100)             # read only 100 rows
 pd.read_fwf("file.txt")                          # fixed-width text file
+
+
 # OTHER FORMATS
+# --------------------------------
 pd.read_clipboard() # Clipboard — copy any table, then run this
 pd.read_parquet("file.parquet") # Parquet — the preferred format for big data (very fast)
 pd.read_xml("file.xml") # XML
@@ -248,9 +307,6 @@ df.loc['oid_1000'] # index is a string now
 One thing to look out for is that labels, that are at the same time numbers, can be called without quotation marks, which makes mistaking them for positional indices more likely.
 
 ```python
-# confusingly, if order_id is number
-# we can select without quotation marks
-# which makes mistaking it for positonal index more likely
 df.loc[1000]
 ```
 
@@ -272,7 +328,7 @@ df.iat[0, 3]                   # get value at row 0, column position 3
 df.iat[0, 3] = 999             # set value at row 0, column position 3
 ```
 
-The `i` in `iloc` and `iat` stand for index.
+The `i` in `iloc` and `iat` stands for index.
 
 # Sorting
 
@@ -325,11 +381,248 @@ Assigns a rank to each row based on a column’s values, without changing the ro
 df['Population Rank'] = df['2022 Population'].rank(ascending=False)
 ```
 
+# Data Types
+
+Dtypes → check column data types
+df.dtypes
+Convert to datetime → fix dates
+pd.to\_datetime(df\["date"])
+Convert to numeric → clean numbers
+pd.to\_numeric(df\["amount"], errors="coerce")
+Astype category → optimize memory
+df\["city"].astype("category")
+Rename columns → consistency
+df.rename(columns={"Order Date":"order\_date"})
+Sort values → inspect extremes
+df.sort\_values("amount")
+Unique values → detect IDs
+df.nunique()
+
+# Missing Values
+
+```python
+# is null → missing check 
+df.isna().any()
+
+# count of nulls per column
+df.isna().sum()
+
+# null percentage → severity 
+df.isna().mean()*100
+
+# completely remove rows or columns containing nulls
+df.dropna()
+
+# simple impute, fill missing values with replacements 
+df.fillna(0)
+
+# numeric fix → fill with median, mean etc.  
+df["amount"].fillna(df["amount"].median())
+
+# forward fill → time series 
+df.fillna(method="ffill")
+```
+
+# Duplicates and Quality Checks
+
+```python
+# find duplicates → detect repeats
+df.duplicated()
+
+# count duplicates → data quality 
+df.duplicated().sum()
+
+# drop duplicates → clean data 
+df.drop_duplicates()
+
+# subset duplicates → key-based 
+df.duplicated(subset=["id","date"])
+
+# memory usage → dataset size 
+df.memory_usage(deep=True)
+
+# sample rows → random check
+df.sample(5)
+
+# value counts → category spread 
+df["status"].value_counts() 
+```
+
+# Descriptive Statistics
+
+```python
+# mean → average value 
+df["amount"].mean()
+
+# median → central value 
+df["amount"].median()
+
+# std dev → variation 
+df["amount"].std()
+
+# quantiles → distribution cut 
+df["amount"].quantile([0.25,0.5,0.75])
+
+# skew → distribution shape 
+df["amount"].skew()
+
+# kurtosis → tail heaviness 
+df["amount"].kurt()
+
+# mode → most frequent 
+df["status"].mode()
+```
+
+# Correlation
+
+```python
+# correlation matrix → relationships 
+df.select_dtypes("number").corr()
+
+# target correlation → drivers 
+df.corr()["amount"]
+
+# covariance → joint variation
+df.cov()
+
+# scatter plot → relation view 
+plt.scatter(df["x"], df["y"])
+
+# pairplot → multi-feature view 
+sns.pairplot(df)
+
+# heatmap → correlation visual 
+sns.heatmap(df.corr())
+
+# line fit → trend check
+np.polyfit(x, y, 1)
+```
+
+# Grouping
+
+```python
+# Group mean → segment average 
+df.groupby("city")["amount"].mean()
+
+# Group sum → totals 
+df.groupby("city")["amount"].sum()
+
+Multiple agg → deeper insight 
+df.groupby("city") 
+["amount"].agg(["mean","median","count"])
+
+# Pivot table → summary view
+pd.pivot_table(df, values="amount", index="city")
+
+# Crosstab → category vs category 
+pd.crosstab(df["city"], df["status"])
+
+# Rank within group → comparison 
+df.groupby("city")["amount"].rank()
+
+# Top N per group → leaders 
+df.sort_values("amount").groupby("city").tail(3)
+```
+
+# Visualizations
+
+```python
+
+# Histogram → distribution 
+df["amount"].hist()
+
+# Boxplot → outliers 
+df.boxplot(column="amount")
+
+# Bar plot → category counts 
+df["city"].value_counts().plot.bar()
+
+# Line plot → trends 
+df.plot.line(x="date", y="amount")
+
+# Countplot → frequency 
+sns.countplot(x="status", data=df)
+
+# Violin plot → density 
+sns.violinplot(x="status", y="amount", data=df)
+
+# Save plot → reuse 
+plt.savefig("plot.png")
+```
+
+# Performance Hacks
+
+## Method Chaining
+
+```python
+# The "Messy" Way  
+df_clean = df.dropna()  
+df_filtered = df_clean[df_clean['age'] > 25]  
+df_sorted = df_filtered.sort_values('salary')
+
+# The "Chain" Way  
+df_final = (  
+    df  
+    .dropna()  
+    .query("age > 25")  
+    .sort_values('salary')  
+    .reset_index(drop=True)  
+)
+```
+
+## Downcasting
+
+Data types like `object` or `float64` are often the default. These are flexible but heavy. Switching to smaller or more suitable types can reduce memory usage and improve performance.
+
+```python
+df = pd.DataFrame({
+    "rank": [1, 2, 3, 4, 5],
+    "country": ["France", "Germany", "France", "Angola", "France"]
+    "score": [99.5, 85.0, 72.0, 100.0, 40.0]
+})
+
+# Downcast integer and float columns
+df["user_id"] = df["user_id"].astype("int32")
+df["score"] = df["score"].astype("float32")
+```
+
+String columns with repeated values benefit from 'category' type, it can reduce memory usage massively and makes operations like filtering and grouping noticeably faster.
+
+```python
+# check memory usage before  
+print(df["country"].memory_usage(deep=True))
+
+# casting repeated strings to category   
+df["country"] = df["country"].astype("category")
+
+# check memory usage after downcasting 
+print(df["country"].memory_usage(deep=True))
+```
+
+## `usecols` and `dtype`
+
+Pandas guesses your data types, and scans the entire file for this purpose. This can result in long loading times. Speed up the process by selecting only the columns of interest from the start and define the data types directly.
+
+```python
+df = pd.read_csv(
+    "sales_data.csv",
+    
+    # select cols to use
+    usecols= ["order_id", "customer_id", "item_type"]
+    
+    # infer most efficient data type
+    dtype={
+        "order_id": "int32",
+        "customer_id": "int32",
+        "item_type": "category"
+    }
+)
+```
+
 …. to be continued …
 
-## Sources
+# Sources
 
-10 minutes to pandas
-https://pandas.pydata.org/docs/user\_guide/10min.html#min
+[10 minutes to pandas](https://pandas.pydata.org/docs/user_guide/10min.html#min)
 
-Mhadi, Hussein (2026, Feb 26). _Mastering Pandas-Part 1: Reading, Sorting & Displaying Data_. Medium. https://blog.gopenai.com/mastering-pandas-part-1-reading-sorting-displaying-data-4de39bb4c9c4?gi=5ceb1ef9361f\&source=user\_profile\_page---------1-------------70b422af101d----------------------
+[Mhadi, Hussein (2026, Feb 26). _Mastering Pandas-Part 1: Reading, Sorting & Displaying Data_. Medium.](https://blog.gopenai.com/mastering-pandas-part-1-reading-sorting-displaying-data-4de39bb4c9c4?gi=5ceb1ef9361f\&source=user_profile_page---------1-------------70b422af101d----------------------)
