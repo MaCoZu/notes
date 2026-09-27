@@ -1,0 +1,13 @@
+{
+  "name": "toc-collapse",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "quartz": {
+    "name": "toc-collapse",
+    "displayName": "TOC Collapse",
+    "description": "Collapses TOC sub-headings behind the top-level (depth-0) entries.",
+    "version": "1.0.0",
+    "category": "transformer"
+  }
+}

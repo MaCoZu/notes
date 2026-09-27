@@ -79,6 +79,9 @@ plugins:
     layout:
       position: right
       priority: 30
+  - source: "./toc-collapse"
+    enabled: true
+    order: 51
   - source: "@quartz-community/crawl-links"
     enabled: true
     options:

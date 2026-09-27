@@ -93,6 +93,24 @@ article .katex-display {
   overflow: visible;
 }
 
+.toc .toc-content li.hidden {
+  display: none;
+}
+
+.toc .toc-content .toc-fold {
+  display: inline-block;
+  margin-right: 0.4rem;
+  cursor: pointer;
+  user-select: none;
+  color: var(--dark);
+  opacity: 0.55;
+  font-size: 0.95em;
+}
+
+.toc .toc-content li.depth-0.open .toc-fold {
+  opacity: 0.9;
+}
+
 
 svg {
   --svg-link: var(--tertiary);
