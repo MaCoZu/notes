@@ -1,10 +1,13 @@
 ---
 publish: true
 title: Design Principles for Data Viz
-description: Data visualization lies at the intersection of statistics and design and is concerned with conveying information. Behavioral psychology, design principles and communication techniques can help us to overcome common cognitive biases and improve information intake.
 created: 2026-09-27T07:41:04.156Z
-modified: 2026-09-27T09:43:54.296Z
+modified: 2026-09-28T16:00:47.851Z
+tags:
+  - topic/communication
 ---
+
+Data visualization lies at the intersection of statistics and design and is concerned with conveying information. But the message is not always reaching the receiver for various reasons. Subjective listening, poor presentation and a flood of irrelevant information attacking our minds are among them. As bearers of a message we can leverage behavioral psychology, design principles and communication techniques, to overcome cognitive biases and improve information intake.
 
 # Cognition
 
