@@ -2,9 +2,9 @@
 publish: true
 title: Introduction to Pandas
 created: 2026-09-19T14:24:03.929Z
-modified: 2026-09-27T06:40:05.175Z
+modified: 2026-09-27T10:22:36.066Z
 tags:
-  - status/draft
+  - "#status/draft"
 ---
 
 Pandas is an open-source Python library built for data manipulation and analysis. The term ‘Pandas’ derived from Panel Data a three-dimensional dataset used in econometrics.
@@ -312,7 +312,7 @@ df.loc[1000]
 
 ### `loc` & `iloc` Distinctions
 
-![[Introduction to Pandas - loc vs iloc.png|500]]
+![[images/Introduction to Pandas - loc vs iloc.png|500]]
 
 ## Selecting Scalars `at` & `iat`
 
@@ -626,3 +626,5 @@ df = pd.read_csv(
 [10 minutes to pandas](https://pandas.pydata.org/docs/user_guide/10min.html#min)
 
 [Mhadi, Hussein (2026, Feb 26). _Mastering Pandas-Part 1: Reading, Sorting & Displaying Data_. Medium.](https://blog.gopenai.com/mastering-pandas-part-1-reading-sorting-displaying-data-4de39bb4c9c4?gi=5ceb1ef9361f\&source=user_profile_page---------1-------------70b422af101d----------------------)
+
+https://towardsdatascience.com/7-pandas-performance-tricks-every-data-scientist-should-know/
