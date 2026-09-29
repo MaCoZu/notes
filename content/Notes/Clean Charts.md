@@ -3,12 +3,12 @@ publish: true
 title: Clean Charts
 description: Choosing the right charts and cleaning them.
 created: 2026-03-31
-modified: 2026-09-25T12:51:18.468Z
+modified: 2026-09-29T12:02:20.612Z
 tags:
   - topic/design
 ---
 
-## Tables vs. Graphs:
+# Tables vs. Graphs:
 
 _Tables_ are ideal to look up individual values. The ‘tabular’ format of rows and columns facilitates tracing the information.
 
@@ -16,7 +16,7 @@ _Graphs_ however reveal the shape of the data, which can not easily be gleaned b
 
 ![[images/table_vs_graph.png|600]]
 
-## Quantitative vs. Categorical Data
+# Quantitative vs. Categorical Data
 
 **Quantitative data** is numerical information that can be measured or counted.
 
@@ -30,7 +30,7 @@ _Qualitative data_ can still be categorized by its [level of measurement](https:
 - **Ordinal data** → has a natural order or ranking (unsatisfied, neutral, satisfied). But the difference between these ranks is either not measurable, unequal or meaningless.
 - **Interval data** → consists of quantitative data but collected into equal intervals like $[10°C-20°C], [20°C-30°C]$. Interval data can be ranked and the difference between data points is measurable. But intervals lack a true zero point, in the case of degrees $0°C$ does not mean the absence of temperature. Also, a multiplication or division is not meaningful, $20°C\,(68°F)$ is not twice as much as $10°C\,(50°F)$, because the ratio changes depending on the scale.
 
-## Displaying Data
+# Displaying Data
 
 Numbers become meaningful when compared to related numbers. One of the most effective ways to compare quantitative data is to juxtapose two dimensions on a Cartesian coordinate system, or x-y plane. This works well because the eye immediately grasps the line length and 2D position, while areas like boxes of different sizes or slices of a pie are harder to differentiate.
 
@@ -56,17 +56,17 @@ Bars organized around a zero axis (aka Butterfly chart) effectively show deviati
 
 **Box plots** show the distribution of data, similar to histograms, with the additional features like the median, quantiles, and whiskers, all helping the user see the skew and outliers of the distribution more clearly.
 
-## Remove “Chart Junk”
+# Remove “Chart Junk”
 
-Anything that does not contribute to the meaning of the data distracts communication. Remove things like bright colors and fancy backgrounds. Subdue grid lines and labels to
+Anything that does not contribute to the meaning of the data distracts communication. Remove things like bright colors and fancy backgrounds. Subdue grid lines and labels to keep the focus on the parts that matter.
 
-It is a good basic practice to use relatively soft colors in graphs, such as lowly saturated, natural colors found in nature, reserving the use of bright, dark, and highly saturated colors for those occasions when you need to make something stand out.
+It is a good basic practice to use relatively soft colors in graphs, such as lowly saturated, natural colors found in nature. Reserve the use of bright, dark, and highly saturated colors for those occasions when you need to make something stand out.
 
 Use only 5 to 10 major tick marks on an axis to avoid clutter.
 
 Hide distracting data series, while keeping the accessible on demand, use filters/slicers to allow users to focus or zoom out.
 
-## Readability
+# Readability
 
 - _Highlight_ specific data with contrasting borders, thicker lines, or larger point sizes. Guide the eye to the important stuff.
 - _Label lines directly_ at their endpoints instead of using a distant legend.
@@ -77,4 +77,6 @@ Hide distracting data series, while keeping the accessible on demand, use filter
 - Let your _axis scale to extend slightly below the lowest and above the highest value_. Give some breathing room.
 - For scales involving positive and negative numbers, _position the axis line at zero_, as clear visual marker.
 
-Source: [Few, S. (2005). Effectively Communicating Numbers: Selecting the Best Means and Manner of Display, Perceptual Edge.](https://perceptualedge.com/articles/Whitepapers/Communicating_Numbers.pdf)
+# Sources
+
+[Few, S. (2005). Effectively Communicating Numbers: Selecting the Best Means and Manner of Display, Perceptual Edge.](https://perceptualedge.com/articles/Whitepapers/Communicating_Numbers.pdf)

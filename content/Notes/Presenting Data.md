@@ -3,10 +3,10 @@ publish: true
 title: Presenting Data
 description: Some good practices for data presentation.
 created: 2026-09-28T10:43:47.488Z
-modified: 2026-09-28T14:37:21.604Z
+modified: 2026-09-29T12:04:53.056Z
 ---
 
-### Preparation & Structure
+# Preparation & Structure
 
 - Decide if you are leading the audience to a specific conclusion (_explanatory_) or if you're providing them with neutral information to discover their own insights (_exploratory_).
 - Make an empowering promise and tell the audience explicitly what they will know by the end of your presentation that they did not know at the beginning.
@@ -19,7 +19,7 @@ modified: 2026-09-28T14:37:21.604Z
 
 [17 Presentation Frameworks](https://benjaminball.com/blog/guide-to-powerful-presentation-frameworks/)
 
-### Open with Impact
+# Open with Impact
 
 - **The 5-Minute Rule:** Establish your **Vision** (a critical problem + your unique analytical approach) and prove you have **Done Something** within the first five minutes.
 - **Winston’s Star:** Anchor your findings in a memorable combination: **Symbol, Slogan, Surprise, Salient Idea, and Story**.
@@ -28,7 +28,7 @@ modified: 2026-09-28T14:37:21.604Z
 - **Nonverbal Authority:** Project physical composure, slow your speech rate by 15–20%, and claim your space. This is often turned into a bossy attitude while it rather means, don’t rush, be authentic and feel at ease.
 - To reduce nervousness you can familiarize yourself with the podium or space you’ll speak on beforehand. To avoid involuntary fidgeting press your palms against the underside of a table or lightly touch your fingers together. If eye contact feels intimidating, look at the spot between the other person's eyes. Among others.
 
-### Data Design & Visual Clarity
+# Data Design & Visual Clarity
 
 - **Use a visual hierarchy and clean designs.** Erase non-data ink like heavy grid lines, 3D effects, and decorative chart junk. Embrace white space, short paragraphs, alignment, and other [[Design Principles for Data Viz|Design Principles]] which help with information processing and respect the recipient's time. → [[Clean Charts]]
 - **Table vs. Graph Choice:** Use a **table** when precision or exact value lookups are required. Use a **graph** when the core insight resides in patterns, trends, or visual relationships.
@@ -41,26 +41,26 @@ modified: 2026-09-28T14:37:21.604Z
 - For complex analytical decisions, replace bulleted slide decks with a concise 2–4 page narrative document. Allow silent reading before discussion to leverage human scanning speed and spatial adjacency.
 - Keep your presentation and slides simple enough for everyone to follow and grasp the essential message. Complex graphs and detailed numbers are best delivered afterward as a handout.
 
-### Vocal Authority & Delivery Heuristics
+# Vocal Authority & Delivery Heuristics
 
 - **Refrain from 'hedging'** and replace filler words like “maybe” or “I think” with a deliberate 3–4 second pause. Pauses also give your speech rhythm and the audience time to think.
 - **The 280-Character Rule:** Restrict verbal answers to the length of a short social post (~280 characters), then stop and give the audience a chance for further inquiry. This protects you from rambling.
 - **Cycling:** Repeat core analytical takeaways at least **three times** using varied phrasing so that the audience that “fogged out” can get on board again.
 - **The 7-Second Rule:** After asking the audience a question, wait a full 7 seconds before speaking to allow real cognitive processing.
 
-### Analytical Integrity & Engagement
+# Analytical Integrity & Engagement
 
 - **Feynman’s Law of Integrity:** Ask yourself: _“How do I know that? How could I possibly know that?”_ Never torture data until it confesses; acknowledge limitations and uncertainties explicitly.
 - **Verbal Punctuation:** Provide clear landmarks (numbered steps, explicit transition statements) so listeners can navigate your logical structure effortlessly.
 - **Asymmetric Credit & Blame:** Attribute analytical wins and team efforts to “We”; personally absorb mistakes, assumptions, or limitations with “Me”.
 
-### Land the Plane
+# Land the Plane
 
 - End with a salute to the audience, a memorable thesis, or a high-impact call to action. Don’t end on “Questions?” or “Thank You” slide.
 - Ending early delights your audience and signals absolute mastery over your material and time.
 - **Clear Call to Action:** Close with a concrete resolution that answers “Now What?” and drives behavior or decisions.
 
-## Sources
+# Sources
 
 Van Edwards, V. (2025, May 8). _26 public speaking tips that will make you unforgettable_. Science of People. \[https://www.scienceofpeople.com/public-speaking-tips/]
 

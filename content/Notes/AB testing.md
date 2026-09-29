@@ -2,7 +2,7 @@
 publish: true
 title: AB testing
 created: 2026-09-21T16:17:59.931Z
-modified: 2026-09-26T14:53:58.449Z
+modified: 2026-09-29T09:47:37.047Z
 tags:
   - topic/data
   - status/review
@@ -92,15 +92,9 @@ The $\text{Numerator} = p_A - p_B$ compares the independent sample proportions, 
 
 $H_0: p_A = p_B = p$ is at the same time the assumption and viewpoint of any hypothesis test. And by extension we assume there is only one true underlying conversion rate $p$ from the exact same single pool users. While any difference observed between $p_A$ and $p_B$ is by chance only.
 
-Since $H_0$ assumes $p_A$ and $p_B$ are actually equal to a single value $p$, our best possible estimate of that single true $p$ comes from **combining (pooling) all your data together**:
+Since $H_0$ assumes $p_A$ and $p_B$ are actually equal to a single value $p$, our best possible estimate of that single true $p$ comes from _combining (pooling) all your data together_.
 
-$$
-\begin{aligned}
-\hat{p} &= \frac{\text{Total Clicks (Group A + Group B)}}{\text{Total Visitors (Group A + Group B)}} = \frac{x_A + x_B}{n_A + n_B}
-\end{aligned}
-$$
-
-If the difference is $|p_A - p_B|>0$ the assessment of a significant effect depends on the denominator which functions as a scaling unit, it is also called standard error of the difference.
+If the difference is $|p_A - p_B|>0$ the assessment of a significant effect depends on the denominator which functions as a scaling unit, it is also called the _pooled standard error_.
 
 $$
 \begin{aligned}
@@ -112,7 +106,7 @@ The Numerator ($p_A - p_B$): Uses your **separate sample estimates** to capture 
 
 The Denominator: Uses the **single pooled estimate** to set the benchmark for how much noise would occur if $H_0$ were true.
 
-The variance term $\hat{p}(1 - \hat{p})$ represents the variance of success ($\hat{p}$) and failure ($1-\hat{p}$) is a binomial distribution, it measures the randomness, which is highest if failure and success have the same chance ($\hat{p}=1-\hat{p}=0.5$) of occurring.
+The variance term $\hat{p}(1 - \hat{p})$ represents the variance of success ($\hat{p}$) and failure ($1-\hat{p}$) in a binomial distribution, it measures the randomness. It is highest if failure and success have the same chance ($\hat{p}=1-\hat{p}=0.5$) of occurring.
 
 ```
 Variance p(1-p)

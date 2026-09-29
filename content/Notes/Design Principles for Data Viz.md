@@ -2,7 +2,7 @@
 publish: true
 title: Design Principles for Data Viz
 created: 2026-09-27T07:41:04.156Z
-modified: 2026-09-28T16:00:47.851Z
+modified: 2026-09-29T12:04:18.441Z
 tags:
   - topic/communication
 ---
@@ -11,7 +11,7 @@ Data visualization lies at the intersection of statistics and design and is conc
 
 # Cognition
 
-### Working Memory & Information Architecture
+## Working Memory & Information Architecture
 
 **Principles:** _Miller’s Law, Recognition over Recall, Picture Superiority Effect, Iconic Representation, Progressive Disclosure._
 
@@ -21,7 +21,7 @@ Human memory heavily favors [**Recognition over Recall**](https://research-colle
 
 To leverage this, designers use [**Iconic Representation**](https://www.gabrielgreenberg.com/docs/mit-iconicity.pdf), employing pictorial symbols to make key features instantly recognizable reducing the need to read dense texts. Finally, [**Progressive Disclosure**](https://en.wikipedia.org/wiki/Progressive_disclosure) manages overall cognitive load by layering data —presenting high-level overviews first and revealing granular details only when requested by the viewer.
 
-### Cognitive Biases & Spatial Intuition
+## Cognitive Biases & Spatial Intuition
 
 **Principles:** _Confirmation Bias, Framing, Causal Reductionism, Inattentional Blindness, Left-Digit Effect, Selection Bias / Survivorship Bias, Visuospatial Resonance, Number-Space Associations._
 
@@ -35,7 +35,7 @@ To align visualizations with human spatial intuition, designers leverage [**Visu
 
 # Design Principles
 
-### Color & Visual Encoding
+## Color & Visual Encoding
 
 **Principles:** _Color Theory, Color Effects, Highlighting._
 
@@ -43,7 +43,7 @@ Color is one of the most powerful pre-attentive visual channels, but it must be 
 
 Through strategic [**Highlighting**](https://www.flyriver.com/g/highlight-key-information-strategically?auth=1790497520767), designers apply bright colors, contrasting borders, or distinct shapes to less than 10% of a display, creating a clear visual pop-out that guides the viewer's eye directly to the most critical insight without adding visual noise.
 
-### Perceptual Grouping & Gestalt Principles
+## Perceptual Grouping & Gestalt Principles
 
 **Principles:** _Proximity, Similarity, Uniform Connectedness, Figure-Ground, Good Continuation, Common Fate._
 
@@ -53,7 +53,7 @@ Visual pattern-finding relies on automatic perceptual organization rules that di
 
 When dealing with animated graphics, [**Common Fate**](https://www.gestaltprinciples.com/principles/common-fate) groups elements that move at the same speed and direction into a unified perceptual unit.
 
-### Spatial Layout, Hierarchy & Structure
+## Spatial Layout, Hierarchy & Structure
 
 **Principles:** _Inverted Pyramid, Alignment, Orientation Sensitivity, Perspective Cues, Rule of Thirds, Symmetry, Hierarchy of Needs._
 
@@ -67,7 +67,7 @@ To communicate multi-variable depth without adding 3D clutter, [**Perspective Cu
 
 Underlying all layout decisions is the design [**Hierarchy of Needs**](https://ixdf.org/literature/topics/hierarchy-of-needs), which dictates that a display must satisfy basic functional readability and reliability before higher-level goals like aesthetic creativity can be achieved.
 
-### Simplicity, Clarity & Noise Reduction
+## Simplicity, Clarity & Noise Reduction
 
 **Principles:** _KISS / Ockham’s Razor, Horror Vacui, Legibility, Readability, Progressive Subtraction._
 
@@ -77,7 +77,7 @@ Textual elements must prioritize **Legibility**, ensuring that [typography](http
 
 Finally, **Progressive Subtraction** applies systematic simplification over successive design iterations, stripping away redundant decorations until only the essential data signals remain.
 
-### Usability, Mapping & Interaction
+## Usability, Mapping & Interaction
 
 **Principles:** _Mapping, Consistency, Constraint, Hick’s Law, Fitts’ Law, Feedback, Forgiveness, User-Centered vs. User-Driven Design._
 
@@ -94,3 +94,5 @@ When errors occur, [**Feedback**](https://www.numberanalytics.com/blog/ultimate-
 # Sources
 
 Lidwell, W., Holden, K., & Butler, J. (2023). _Universal principles of design: 200 ways to increase appeal, enhance usability, influence perception, and make better design decisions_ (Updated and expanded, third edition). Quarto Publishing Group USA Inc.
+
+Ellis, G. (2018). _Cognitive Biases in Visualizations_. Springer.
