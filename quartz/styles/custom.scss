@@ -75,8 +75,8 @@ body {
 .text-md { font-size: 1rem; }
 .font-typewriter { font-family: var(--codeFont); }
 
-code { font-size: 1.2rem; }
-pre > code { font-size: 1.25rem; }
+code { font-size: 1.05rem; }
+pre > code { font-size: 1.1rem; }
 
 article img {
   display: block;
@@ -92,8 +92,8 @@ article li {
   overflow: visible;
 }
 
-span.katex { font-size: 1.1em; }             /* inline math = exactly body size */
-span.katex-display { font-size: 1.4em; }   /* keep $$ display a bit larger */
+span.katex { font-size: 1.05em; }             /* inline math = exactly body size */
+span.katex-display { font-size: 1.3em; }   /* keep $$ display a bit larger */
 
 article .katex-display {
   display: block;
