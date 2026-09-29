@@ -46,8 +46,8 @@ jobs:
       - name: Seed OG image font cache with local typography fonts
         run: |
           mkdir -p quartz/.quartz-cache/fonts
-          cp quartz/static/fonts/ArchivoBlack-Regular.ttf quartz/.quartz-cache/fonts/Archivo-700
-          cp "quartz/static/fonts/Freight Sans W01 Book.ttf" quartz/.quartz-cache/fonts/Freight+Sans+Book-400
+          cp quartz/static/fonts/Assistant-Bold.ttf quartz/.quartz-cache/fonts/Assistant-700
+          cp quartz/static/fonts/Assistant-Regular.ttf quartz/.quartz-cache/fonts/Assistant-400
       - name: Build Quartz
         run: npx quartz build -d content
       - name: Upload artifact

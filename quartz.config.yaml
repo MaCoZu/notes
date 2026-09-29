@@ -16,8 +16,8 @@ configuration:
     fontOrigin: local
     cdnCaching: true
     typography:
-      header: "Freight Sans"
-      body: "Freight Sans Book"
+      header: "Assistant"
+      body: "Assistant"
       code: "Geist Mono"
     colors:
       lightMode:
