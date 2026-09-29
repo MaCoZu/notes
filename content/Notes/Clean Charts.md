@@ -3,7 +3,7 @@ publish: true
 title: Clean Charts
 description: Choosing the right charts and cleaning them.
 created: 2026-03-31
-modified: 2026-09-29T12:02:20.612Z
+modified: 2026-09-29T12:29:39.581Z
 tags:
   - topic/design
 ---
@@ -79,4 +79,4 @@ Hide distracting data series, while keeping the accessible on demand, use filter
 
 # Sources
 
-[Few, S. (2005). Effectively Communicating Numbers: Selecting the Best Means and Manner of Display, Perceptual Edge.](https://perceptualedge.com/articles/Whitepapers/Communicating_Numbers.pdf)
+Few, S. (2005). Effectively Communicating Numbers: Selecting the Best Means and Manner of Display, Perceptual Edge. https://perceptualedge.com/articles/Whitepapers/Communicating\_Numbers.pdf
