@@ -3,7 +3,7 @@ publish: true
 title: Presenting Data
 description: Some good practices for data presentation.
 created: 2026-09-28T10:43:47.488Z
-modified: 2026-09-29T12:04:53.056Z
+modified: 2026-09-29T12:27:13.693Z
 ---
 
 # Preparation & Structure
@@ -25,7 +25,7 @@ modified: 2026-09-29T12:04:53.056Z
 - **Winston’s Star:** Anchor your findings in a memorable combination: **Symbol, Slogan, Surprise, Salient Idea, and Story**.
 - **Break Expectations:** Introduce data that runs counter to conventional wisdom or intuition to generate narrative tension. Use the bait and switch technique, where you first show made up but expected data and then switch to the surprising real data.
 - **Gain trust** from the audience — by explaining your personal participation or concern about the topic at hand — this reduces reservations and thereby complexity.
-- **Nonverbal Authority:** Project physical composure, slow your speech rate by 15–20%, and claim your space. This is often turned into a bossy attitude while it rather means, don’t rush, be authentic and feel at ease.
+- **Nonverbal Authority:** Project physical composure, slow your speech rate by 15–20%, and claim your space. This is sometimes turned into a bossy attitude while it rather means, don’t rush, be authentic and relax.
 - To reduce nervousness you can familiarize yourself with the podium or space you’ll speak on beforehand. To avoid involuntary fidgeting press your palms against the underside of a table or lightly touch your fingers together. If eye contact feels intimidating, look at the spot between the other person's eyes. Among others.
 
 # Data Design & Visual Clarity
@@ -36,7 +36,7 @@ modified: 2026-09-29T12:04:53.056Z
 - **[Schneiderman's Mantra](https://www.cs.umd.edu/~ben/papers/Shneiderman1996eyes.pdf) :** Add detail sparingly, gradually or only on demand.
   _Overview first → Zoom & Filter → Details on Demand_.
 
-* Turn math into something memorable. E.g., tangible things and common knowledge. → [Make numbers count](Make%20numbers%20count.md)
+* Turn math into something memorable. E.g., tangible things and common knowledge. → [Make numbers count](https://sobrief.com/books/making-numbers-count)
 
 - For complex analytical decisions, replace bulleted slide decks with a concise 2–4 page narrative document. Allow silent reading before discussion to leverage human scanning speed and spatial adjacency.
 - Keep your presentation and slides simple enough for everyone to follow and grasp the essential message. Complex graphs and detailed numbers are best delivered afterward as a handout.
