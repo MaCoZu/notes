@@ -1,7 +1,12 @@
-$ui-font: "Freight Sans", sans-serif;
-$body-font: "Freight Sans Book", sans-serif;
+$ui-font: "Assistant Variable", sans-serif;
+$body-font: "Assistant", sans-serif;
 
-body,
+// Assistant, Verdana, Trebuchet MS, Freight Sans Book, Tahoma, Nunito Sans
+
+body {
+  font-family: $ui-font;
+}
+
 .sidebar,
 nav,
 .page-title,
@@ -10,12 +15,14 @@ header,
 footer,
 .search-button {
   font-family: $ui-font;
+  font-size: 1.05em;
+  font-weight: 700;            /* UI weight: try 500 (Medium) or 600 (SemiBold) */
+  letter-spacing: 0.03em;      /* UI tracking: try 0.005em .. 0.03em */
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $ui-font;
 }
-
 
 article,
 .center > .page-header {
@@ -68,8 +75,8 @@ body {
 .text-md { font-size: 1rem; }
 .font-typewriter { font-family: var(--codeFont); }
 
-code { font-size: 1rem; }
-pre > code { font-size: 1.05rem; }
+code { font-size: 1.2rem; }
+pre > code { font-size: 1.25rem; }
 
 article img {
   display: block;
@@ -84,6 +91,9 @@ article li {
 .katex-display {
   overflow: visible;
 }
+
+span.katex { font-size: 1.1em; }             /* inline math = exactly body size */
+span.katex-display { font-size: 1.4em; }   /* keep $$ display a bit larger */
 
 article .katex-display {
   display: block;
@@ -155,26 +165,50 @@ svg {
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Assistant";
+  src: url("static/fonts/Assistant-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
 
 @font-face {
-  font-family: "Freight Sans";
-  src: url("static/fonts/Freight Sans.ttf") format("truetype");
+  font-family: "Assistant";
+  src: url("static/fonts/Assistant-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Freight Sans Book";
-  src: url("static/fonts/Freight Sans W01 Book.ttf") format("truetype");
-  font-weight: 450;
+  font-family: "Assistant";
+  src: url("static/fonts/Assistant-Medium.ttf") format("truetype");
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
-  font-family: "Freight Sans Light";
-  src: url("static/fonts/Freight Sans W01 Light.ttf") format("truetype");
-  font-weight: 450;
+  font-family: "Assistant";
+  src: url("static/fonts/Assistant-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Assistant";
+  src: url("static/fonts/Assistant-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Assistant Variable";
+  src: url("static/fonts/Assistant-VariableFont_wght.ttf") format("truetype-variations");
+  font-weight: 200 800;
   font-style: normal;
   font-display: swap;
 }

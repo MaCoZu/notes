@@ -26,7 +26,30 @@ console.log(typography);
 ```
 
 ```python
-df = pd.read_csv()
+import pandas as pd
+from dataclasses import dataclass
+
+
+@dataclass
+class Metric:
+    name: str
+    value: float
+
+    def describe(self) -> str:
+        """Return a short one-line summary."""
+        return f"{self.name}: {self.value:.2f}"
+
+
+def load(path: str = "data.csv") -> pd.DataFrame:
+    df = pd.read_csv(path)
+    df = df.dropna(subset=["value"])
+    return df.sort_values("value", ascending=False)
+
+
+if __name__ == "__main__":
+    top = load().head(10)
+    best = Metric(top.name.iloc[0], top.value.iloc[0])
+    print(best.describe())
 ```
 
 | Element | What to inspect |
