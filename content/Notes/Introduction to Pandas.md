@@ -2,12 +2,12 @@
 publish: true
 title: Introduction to Pandas
 created: 2026-09-19T14:24:03.929Z
-modified: 2026-10-06T14:36:28.050Z
+modified: 2026-10-06T15:09:40.824Z
 tags:
   - status/draft
 ---
 
-> I will use the superstore dataset for my examples, to follow along you can [download the dataset](https://drive.google.com/uc?export=download\&id=1GWHKPdxVuqroKoKoB49zOEyfyLAwbzcc), a notebook with examples or open the notebook in Google Colab directly.
+> I will use the superstore dataset for my examples, to follow along you can [download the dataset](https://drive.google.com/uc?export=download\&id=1GWHKPdxVuqroKoKoB49zOEyfyLAwbzcc), or open the dataset in Google Colab directly. [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/MaCoZu/Python/blob/main/NOTEBOOKS/pandas/00_intro_to_pandas_groupactivity.ipynb)
 
 Pandas is an open-source Python library built for data manipulation and analysis. The term ‘Pandas’ derived from Panel Data a three-dimensional dataset used in econometrics.
 
@@ -31,7 +31,7 @@ A **DataFrame** is a two-dimensional, multiple rows and columns. Each of its col
 
 # Load and Inspect
 
-## Loading data
+# Loading data
 
 To load data into pandas, you use the one of pandas many `read_*()` functions.
 
@@ -139,7 +139,7 @@ pd.read_parquet("file.parquet") # Parquet — the preferred format for big data 
 pd.read_xml("file.xml") # XML
 ```
 
-## CSV (Comma-Separated Values)
+# CSV (Comma-Separated Values)
 
 CSV is maybe the most common file type you will encounter and load.
 
@@ -157,7 +157,7 @@ US-2012-108966, 11-10-2012, Office Supplies, 22.3680
 
 If the separator is not a comma for whatever reason you can change it with the parameter `sep=";"` (see above). Possible separators are semicolon `;`, comma `,`, tab `\t`, pipe `|`. But you can also define [custom separators](https://stackoverflow.com/questions/41235111/customizing-the-separator-in-pandas-read-csv).
 
-## Reading Files & Character Encoding Issues
+# Reading Files & Character Encoding Issues
 
 You may run into a `UnicodeDecodeError` when reading external CSV files, triggered by non-standard character encodings (such as Western European, accented characters, or legacy Windows exports). Passing explicit `encoding` parameters like `encoding="latin-1"` (or `"ISO-8859-1"`, `"cp1252"`) resolves these errors.
 
@@ -166,7 +166,7 @@ You may run into a `UnicodeDecodeError` when reading external CSV files, trigger
 df_loaded = pd.read_csv("superstore.csv", encoding="latin1") # or encoding="ISO-8859-1" / "cp1252
 ```
 
-## Loading with
+# Loading with
 
 As indicated above you can load your data smart, by configuring parameters right from the start. This saves work, RAM, and provides you with workable dataset directly.
 
@@ -183,7 +183,7 @@ df_custom = pd.read_csv(
 )
 ```
 
-## Copy from clipboard
+# Copy from clipboard
 
 One of the niftier tricks is the `pd.read_clipboard()` function. Many pages holding interesting data want you to log in, provide information or go through cumbersome download procedures. You can skip all this nonsense by selecting and copying the data with `Ctrl+C` and paste `Crtl+V` in a pandas code field with this function written:
 
@@ -192,7 +192,7 @@ One of the niftier tricks is the `pd.read_clipboard()` function. Many pages hold
 pd.read_clipboard()
 ```
 
-## Inspection
+# Inspection
 
 To get a first glance of your data try the following functions.
 
@@ -212,7 +212,7 @@ df.head(10)
 df.tail(20)
 ```
 
-## Attributes
+# Attributes
 
 In Pandas, an **attribute** of the DataFrame object, are inherent properties that do not require any input arguments or calculation to return the result. We access them directly without the function-calling parentheses.
 
@@ -250,7 +250,7 @@ df.T
 df.values
 ```
 
-## Descriptive Statistics
+# Descriptive Statistics
 
 You’ve checked the metadata (attributes) and seen some summary statistics with `describe()`. Next you may want to investigate some columns (variables) in depth with descriptive statistics and pandas has a lot of [functions](https://pandas.pydata.org/pandas-docs/stable/user_guide/basics.html#descriptive-statistics) for this, here is a just few of them:
 
@@ -274,7 +274,7 @@ df["Sales"].std()
 df.sample(27)
 ```
 
-## Index Management
+# Index Management
 
 Pandas sets an index which identifies each row. It starts with $0$ and is used to access rows. But you may want to change the index to something more meaningful than the arbitrary default index. Any variable that [uniquely identifies](https://en.wikipedia.org/wiki/Unique_identifier) your rows is a good index candidate. If there is no such unambiguous identifier, you can create one by combining variables into one, for example: last\_name + first\_name + birth\_date.
 
@@ -294,7 +294,7 @@ df_indexed.sort_index(ascending=False)
 df_reset = df_indexed.reset_index()
 ```
 
-## Renaming & Reordering Columns
+# Renaming & Reordering Columns
 
 Data comes in funny forms and may want to change the order of your variables for better maintenance and legibility.
 
@@ -326,7 +326,7 @@ df_reordered = df[desired_order]
 df_reordered[["Order ID", "Order Date"]]
 ```
 
-## Select Columns
+# Select Columns
 
 Columns are often the features of your data frame, representing one dimension of the data. By selecting some columns you loose dimensions but gain focus. This is also called `slicing` the data.
 ![[images/Introduction to Pandas - select columns.png|500]]
@@ -349,7 +349,7 @@ df[['Region', 'Sales']]
 
 ```
 
-### filter()
+## filter()
 
 `filter()` allows you to select columns according to the specified search parameters.
 
@@ -368,7 +368,7 @@ df.filter(regex="^Order.*")
 df.filter(regex=".*-.*")
 ```
 
-## Select Rows
+# Select Rows
 
 You can select rows by their position with `iloc()` or their label – if there is one – with `.loc()`. We discussed how to set an index above, once the rows have an index, the row index is the label you can choose rows by.
 
@@ -388,7 +388,7 @@ Confusions about index and position arise because:
 - A label can also be an integer which makes it sometimes hard to distinguish from a positional index. You can choose an integer _label_ like an integer position with `df.loc[0]` which looks almost like `df.iloc[0]`, but beware the first is a label and the second an integer position.
 - A label looks like a number but actually is a string. You would be tempted to select it with `df.iloc[0]` while it is a string that needs quote marks and the `.loc()` function. → `df.loc["0"]`
 
-### Slicing
+## Slicing
 
 You can get a slice of your data cutting the dataset at distinct points.
 
@@ -403,11 +403,11 @@ df.iloc[3:5]
 df_indexed.loc["CA-2023-100000":"CA-2023-100005"]
 ```
 
-### `loc` & `iloc` Distinctions
+## `loc` & `iloc` Distinctions
 
-![[images/Introduction to Pandas - loc vs iloc.png|500]]
+![[images/Introduction to Pandas - loc vs iloc.png|700]]
 
-## Selecting Rows & Columns
+# Selecting Rows & Columns
 
 Selecting rows and columns can be done at the same time.
 
@@ -420,7 +420,7 @@ df_indexed.loc["CA-2023-100000", ["Customer Name", "Category", "Sales", "Profit"
 df_indexed.loc["CA-2023-100000":"CA-2023-100005", "Category":"Profit"]
 ```
 
-## Selecting Scalars `at[]` & `iat[]`
+# Selecting Scalars `at[]` & `iat[]`
 
 The `at[]` and `iat[]` functions are designed for high-speed access to a single values. They skip the overhead involved in general selection processes, making them the preferred choice when accessing or setting a single cell, the performance difference becomes significant at scale.
 
@@ -434,7 +434,7 @@ df.iat[0, 3]                   # get value at row 0, column position 3
 df.iat[0, 3] = 999             # set value at row 0, column position 3
 ```
 
-## Boolean Indexing & Advanced Filtering
+# Boolean Indexing & Advanced Filtering
 
 To answer questions about your data you certainly want to select rows and columns according to some condition. You do that with comparison logic, logical operators, string methods, set membership, and conditional selection methods (`mask`, `where`, `query`).
 
@@ -464,14 +464,14 @@ subcat_mask = df["Product Name"].str.contains("tool") | df["City"].str.contains(
 df[subcat_mask]
 ```
 
-### `where()`
+## `where()`
 
 ```python
 # Conditional evaluation with .where() (retains shape, replaces non-matching with default value)
 df["Sales"].where(df["Sales"] > 100.0, other=0.0).head(5)
 ```
 
-### `mask()`
+## `mask()`
 
 ```python
 # Conditional replacement with .mask() (replaces matching rows with specified value)
