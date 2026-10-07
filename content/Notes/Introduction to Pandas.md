@@ -1,13 +1,13 @@
 ---
 publish: true
 title: Introduction to Pandas
-created: 2026-09-19T14:24:03.929Z
-modified: 2026-10-06T15:09:40.824Z
+created: 2026-10-07T12:55:51.729Z
+modified: 2026-10-07T12:55:48.923Z
 tags:
   - status/draft
 ---
 
-> I will use the superstore dataset for my examples, to follow along you can [download the dataset](https://drive.google.com/uc?export=download\&id=1GWHKPdxVuqroKoKoB49zOEyfyLAwbzcc), or open the dataset in Google Colab directly. [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/MaCoZu/Python/blob/main/NOTEBOOKS/pandas/00_intro_to_pandas_groupactivity.ipynb)
+> I will use the superstore dataset for my examples, to follow along you can [download the dataset](https://drive.google.com/uc?export=download\&id=1GWHKPdxVuqroKoKoB49zOEyfyLAwbzcc), or open the dataset in Google Colab directly. →  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/MaCoZu/Python/blob/main/NOTEBOOKS/pandas/00_intro_to_pandas_groupactivity.ipynb)
 
 Pandas is an open-source Python library built for data manipulation and analysis. The term ‘Pandas’ derived from Panel Data a three-dimensional dataset used in econometrics.
 
@@ -28,6 +28,27 @@ SQL on the other hand talks to relational databases and is optimized for large s
 A **DataFrame** is a two-dimensional, multiple rows and columns. Each of its columns can hold different data types, meaning it supports heterogeneous data.
 
 → Use DataFrames for complex and large datasets because they allow for a wider range of operations.
+
+**Axis** indicates the dimension on data structures.
+
+The axis is a parameter in many functions to specify if you work along rows (horizontally) or along columns (vertically).
+
+In pandas, `axis = 0` refers to **rows** and `axis = 1` refers to **columns**.
+
+![[Introduction to Pandas - Axis.png]]
+
+- `axis=0` ↓: Operates along the **0**-th dimension (rows).
+- `axis=1` →: Operates along the **1**-st dimension (columns).
+
+```python
+# this will drop the first ROW 
+df.drop(0, axis=0)
+
+# this will drop the first COLUMN
+df.drop(0, axis=1)
+```
+
+The notion of vertical `axis=0` and horizontal `axis=1` usually [confuses people](https://stackoverflow.com/questions/22149584/what-does-axis-in-pandas-mean). Because you read a row horizontally and the entries of a column vertically, which is the inverse of how you read the axis labels. The functions work alike the direction the axis labels. If it helps you can write `axis=index` for `axis=0` (row-wise, vertical) and `axis=columns` (column-wise, horizontal) for `ax1s=1`.
 
 # Load and Inspect
 
@@ -141,9 +162,9 @@ pd.read_xml("file.xml") # XML
 
 # CSV (Comma-Separated Values)
 
-CSV is maybe the most common file type you will encounter and load.
+CSV is maybe the most common file type you will encounter.
 
-CSV stores tabular data as plain text where the values of a record are separated by a comma (delimiter) and on each row sits a separate record. In statistics a record would be called an observation, and the values in one row are the concrete manifestations of variables for this observation.
+CSV stores tabular data as plain text where the values of a record are separated by a comma (delimiter) and each row in your text file indicates separate record. In statistics a record would be called an observation, and the values in one row are the concrete manifestations of attributes (variables) for this observation.
 
 ```txt
 'Order ID', 'Order Date', 'Category', 'Sales'
@@ -155,11 +176,11 @@ US-2012-108966, 11-10-2012, Office Supplies, 22.3680
 ...
 ```
 
-If the separator is not a comma for whatever reason you can change it with the parameter `sep=";"` (see above). Possible separators are semicolon `;`, comma `,`, tab `\t`, pipe `|`. But you can also define [custom separators](https://stackoverflow.com/questions/41235111/customizing-the-separator-in-pandas-read-csv).
+If the separator in your file is not a comma for whatever reason you can change it with the parameter `sep=";"` (see above). Possible separators are semicolon `;`, comma `,`, tab `\t`, pipe `|`. But you can also define [custom separators](https://stackoverflow.com/questions/41235111/customizing-the-separator-in-pandas-read-csv).
 
 # Reading Files & Character Encoding Issues
 
-You may run into a `UnicodeDecodeError` when reading external CSV files, triggered by non-standard character encodings (such as Western European, accented characters, or legacy Windows exports). Passing explicit `encoding` parameters like `encoding="latin-1"` (or `"ISO-8859-1"`, `"cp1252"`) resolves these errors.
+You may run into a `UnicodeDecodeError` when reading external CSV files, triggered by non-standard character encodings (such as Western European, accented characters, or legacy Windows exports). Passing explicit `encoding` parameters like `encoding="latin1"` (or `"ISO-8859-1"`, `"cp1252"`) resolves these errors.
 
 ```python
 # Handling non-UTF-8 encodings (e.g., legacy files, accented text)
@@ -185,7 +206,7 @@ df_custom = pd.read_csv(
 
 # Copy from clipboard
 
-One of the niftier tricks is the `pd.read_clipboard()` function. Many pages holding interesting data want you to log in, provide information or go through cumbersome download procedures. You can skip all this nonsense by selecting and copying the data with `Ctrl+C` and paste `Crtl+V` in a pandas code field with this function written:
+One of the niftier tricks is the `pd.read_clipboard()` function. Many pages holding interesting data want you to log in, provide information or go through cumbersome download procedures. You can skip all this nonsense by selecting and copying the data with `Ctrl+C` and paste `Crtl+V` in a pandas code field where this function receives your data.
 
 ```python
 # paste here
@@ -216,7 +237,7 @@ df.tail(20)
 
 In Pandas, an **attribute** of the DataFrame object, are inherent properties that do not require any input arguments or calculation to return the result. We access them directly without the function-calling parentheses.
 
-Remember methods are function that work with the data given while attributes are metadata of your DataFrame.
+While functions work with the data attributes hold metadata of your DataFrame.
 
 ```python
 # Returns the row index (labels/range)
@@ -351,7 +372,9 @@ df[['Region', 'Sales']]
 
 ## filter()
 
-`filter()` allows you to select columns according to the specified search parameters.
+`filter()` allows you to select columns according to some specified search parameters. The `filter()` is applied to the names of the columns or labels of the index, depending on the axis specified.
+
+The `items`, `like`, and `regex` parameters are mutually exclusive, meaning you can only use one at a time.
 
 ```python
 # filter can be used to select columns by name or by a pattern in the column names
