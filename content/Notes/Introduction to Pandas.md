@@ -2,7 +2,7 @@
 publish: true
 title: Introduction to Pandas
 created: 2026-10-07T12:55:51.729Z
-modified: 2026-10-07T12:55:48.923Z
+modified: 2026-10-10T14:02:05.819Z
 tags:
   - status/draft
 ---
@@ -48,7 +48,9 @@ df.drop(0, axis=0)
 df.drop(0, axis=1)
 ```
 
-The notion of vertical `axis=0` and horizontal `axis=1` usually [confuses people](https://stackoverflow.com/questions/22149584/what-does-axis-in-pandas-mean). Because you read a row horizontally and the entries of a column vertically, which is the inverse of how you read the axis labels. The functions work alike the direction the axis labels. If it helps you can write `axis=index` for `axis=0` (row-wise, vertical) and `axis=columns` (column-wise, horizontal) for `ax1s=1`.
+The notion of vertical `axis=0` for rows and horizontal `axis=1` for columns usually [confuses people](https://stackoverflow.com/questions/22149584/what-does-axis-in-pandas-mean). Because you read the content of a row horizontally and the entries of a column vertically, which is the inverse of how you read their respective axis labels.
+
+The functions work along the direction of the labels and not the contents. If it helps you can write `axis=index` for `axis=0` (row-wise / vertical) and `axis=columns` (column-wise / horizontal) for `ax1s=1`.
 
 # Load and Inspect
 
@@ -56,109 +58,100 @@ The notion of vertical `axis=0` and horizontal `axis=1` usually [confuses people
 
 To load data into pandas, you use the one of pandas many `read_*()` functions.
 
-```python
-import pandas as pd
-
-# genreal loading pattern, df stands for data frame
-df = pd.read_csv(...) 
-
-
-# CSV
-# --------------------------------
-
-# first row as header
-pd.read_csv("file.csv", header=0) 
-
-# set column as index
-pd.read_csv("file.csv", index_col="order_id")   
-
-# read only first 100 rows
-pd.read_csv("file.csv", nrows=100)    
-
-# skip first 2 rows
-pd.read_csv("file.csv", skiprows=2) 
- 
-# specific columns only           
-pd.read_csv("file.csv", usecols=["price","quantity"]) 
-
-# define missing values
-pd.read_csv("file.csv", na_values=["NA","?"])  
-  
-# semicolons instead of commas
-pd.read_csv("file.csv", sep=";") 
-       
-                         
-# EXCEL
-# --------------------------------
-
-# basic read
-pd.read_excel("file.xlsx")         
-
-# specific sheet by name              
-pd.read_excel("file.xlsx", sheet_name="Sheet1")  
-
-# first sheet by index
-pd.read_excel("file.xlsx", sheet_name=0)  
-
-# skip first 2 rows       
-pd.read_excel("file.xlsx", skiprows=2) 
-
-# read columns A to D          
-pd.read_excel("file.xlsx", usecols="A:D")   
-
-          
-# JSON
-# --------------------------------
-
-# basic read
-pd.read_json("file.json")     
-
-# list of records format                   
-pd.read_json("file.json", orient="records")      
-
-
-# HTML
-# --------------------------------
-
-# returns list of all tables
-tables = pd.read_html("file.html") 
-
-# first table from a URL              
-df = pd.read_html("https://website.com/table")[0]
-
-
-# SQL
-# --------------------------------
-import sqlite3
-conn = sqlite3.connect("database.db")
-
-# full SQL query
-df = pd.read_sql("SELECT * FROM table", conn)  
-
-# read entire table directly  
-df = pd.read_sql_table("table_name", conn)      
-
-
-
-# Text files
-# --------------------------------
-pd.read_table("file.txt")                        # tab separated (default)
-pd.read_table("file.txt", sep=",")               # comma separated
-pd.read_table("file.txt", sep=";")               # semicolon separated
-pd.read_table("file.txt", sep="|")               # pipe separated
-pd.read_table("file.txt", header=None)           # file has no header row
-pd.read_table("file.txt", names=["col1","col2"]) # add column names manually
-pd.read_table("file.txt", skiprows=2)            # skip first 2 rows
-pd.read_table("file.txt", nrows=100)             # read only 100 rows
-pd.read_fwf("file.txt")                          # fixed-width text file
-
-
-# OTHER FORMATS
-# --------------------------------
-pd.read_clipboard() # Clipboard — copy any table, then run this
-pd.read_parquet("file.parquet") # Parquet — the preferred format for big data (very fast)
-pd.read_xml("file.xml") # XML
-```
+> [!code]- Click to see all the Pandas read functions
+>
+> ```python
+> # CSV
+> # --------------------------------
+> # first row as header
+> pd.read_csv("file.csv", header=0) 
+>
+> # set column as index
+> pd.read_csv("file.csv", index_col="order_id")   
+>
+> # read only first 100 rows
+> pd.read_csv("file.csv", nrows=100)    
+>
+> # skip first 2 rows
+> pd.read_csv("file.csv", skiprows=2) 
+>
+> # specific columns only          
+> pd.read_csv("file.csv", usecols=["price","quantity"]) 
+>
+> # define missing values
+> pd.read_csv("file.csv", na_values=["NA","?"])  
+>
+> # semicolons instead of commas
+> pd.read_csv("file.csv", sep=";") 
+>
+>
+> # EXCEL
+> # --------------------------------
+> # basic read
+> pd.read_excel("file.xlsx")         
+>
+> # specific sheet by name             
+> pd.read_excel("file.xlsx", sheet_name="Sheet1")  
+>
+> # first sheet by index
+> pd.read_excel("file.xlsx", sheet_name=0)  
+>
+> # skip first 2 rows      
+> pd.read_excel("file.xlsx", skiprows=2) 
+>
+> # read columns A to D         
+> pd.read_excel("file.xlsx", usecols="A:D")   
+>
+>
+> # JSON
+> # --------------------------------
+> # basic read
+> pd.read_json("file.json")     
+>
+> # list of records format                   
+> pd.read_json("file.json", orient="records")      
+>
+>
+> # HTML
+> # --------------------------------
+> # returns list of all tables
+> tables = pd.read_html("file.html") 
+>
+> # first table from a URL             
+> df = pd.read_html("[https://website.com/table](https://website.com/table)")[0]
+>
+>
+> # SQL
+> # --------------------------------
+> import sqlite3
+> conn = sqlite3.connect("database.db")
+>
+> # full SQL query
+> df = pd.read_sql("SELECT * FROM table", conn)  
+>
+> # read entire table directly  
+> df = pd.read_sql_table("table_name", conn)      
+>
+>
+> # Text files
+> # --------------------------------
+> pd.read_table("file.txt")                         # tab separated (default)
+> pd.read_table("file.txt", sep=",")                # comma separated
+> pd.read_table("file.txt", sep=";")                # semicolon separated
+> pd.read_table("file.txt", sep="|")                # pipe separated
+> pd.read_table("file.txt", header=None)            # file has no header row
+> pd.read_table("file.txt", names=["col1","col2"])  # add column names manually
+> pd.read_table("file.txt", skiprows=2)             # skip first 2 rows
+> pd.read_table("file.txt", nrows=100)              # read only 100 rows
+> pd.read_fwf("file.txt")                           # fixed-width text file
+>
+>
+> # OTHER FORMATS
+> # --------------------------------
+> pd.read_clipboard()                # Clipboard — copy any table, then run this
+> pd.read_parquet("file.parquet")    # Parquet — the preferred format for big data (very fast)
+> pd.read_xml("file.xml")            # XML
+> ```
 
 # CSV (Comma-Separated Values)
 
@@ -202,6 +195,32 @@ df_custom = pd.read_csv(
     date_format="%d-%m-%Y", # specify date format
     usecols=['Order ID', 'Order Date', 'Category', 'Sales'] # specific columns only
 )
+```
+
+# Datetime
+
+The `pd.to_datetime()` function converts strings into a proper datetime object, unlocking a host of time-related possibilities. Often, you have to provide a format code for the function to understand how the string translates into a date. To suppress exceptions and set invalid string formats to `NaT` (Not-a-Time), you can add the parameter `errors="coerce"`.
+
+```python
+import pandas as pd
+
+# Convert string dates to datetime objects
+df["Order Date"] = pd.to_datetime(df["Order Date"], format="%d-%m-%Y", errors="coerce")
+```
+
+Here are a few essential things you can do with dates using the `.dt` accessor and standard filtering:
+
+```python
+# 1. Extract date components into new columns
+df["Year"] = df["Order Date"].dt.year
+df["Month"] = df["Order Date"].dt.month
+df["DayName"] = df["Order Date"].dt.day_name()  # e.g., Monday, Tuesday
+
+# 2. Filter data by a specific date range
+recent_orders = df[df["Order Date"] >= "2024-01-01"]
+
+# 3. Sort your dataframe chronologically
+df_sorted = df.sort_values(by="Order Date", ascending=False)
 ```
 
 # Copy from clipboard
@@ -378,7 +397,12 @@ The `items`, `like`, and `regex` parameters are mutually exclusive, meaning you 
 
 ```python
 # filter can be used to select columns by name or by a pattern in the column names
+
+# select columns with filter
 df.filter(items=["Category", "Sales"])
+
+# equivalent to above selection  
+df[["Category", "Sales"]] 
 
 # you can filter the columns name for a sub-string
 df.filter(like="ID")
@@ -445,7 +469,7 @@ df_indexed.loc["CA-2023-100000":"CA-2023-100005", "Category":"Profit"]
 
 # Selecting Scalars `at[]` & `iat[]`
 
-The `at[]` and `iat[]` functions are designed for high-speed access to a single values. They skip the overhead involved in general selection processes, making them the preferred choice when accessing or setting a single cell, the performance difference becomes significant at scale.
+The `at[]` and `iat[]` accessors are designed for high-speed access to a single values. They skip the overhead involved in general selection processes, making them the preferred choice when accessing or setting a single cell, the performance difference becomes significant at scale.
 
 ```python
 # at[] — by label
@@ -473,39 +497,42 @@ df[complex_filter]
 
 ## isin()
 
+In a DataFrame you can select only those rows certain values in one column with `isin()`. You can negate the condition with `~`.
+
 ```python
-# check membership filtering with .isin()
-region_mask = df["Region"].isin(["East", "West"])
-df[region_mask]
+# only rows with Region == "East" OR Region == "West"
+east_west = df["Region"].isin(["East", "West"])
+df[east_west]
+
+not_east_west = ~df["Region"].isin(["East", "West"])
+df[not_east_west]
 ```
 
 ## string accessor:  `str()`
 
+Instead of just search for certain strings in the DataFrame one can also access and process the strings itself.
+
 ```python
-# string accessor boolean evaluation (.str.startswith, .str.contains)
-subcat_mask = df["Product Name"].str.contains("tool") | df["City"].str.contains("Berlin")
+# look for Products with the substring 'tool' in its string
+subcat_mask = df["Product Name"].str.contains("tool") 
 df[subcat_mask]
-```
 
-## `where()`
+# search for all Cities that start with 'New ...'
+berlin_mask = df["City"].str.startswith("New")
+df[berlin_mask]
 
-```python
-# Conditional evaluation with .where() (retains shape, replaces non-matching with default value)
-df["Sales"].where(df["Sales"] > 100.0, other=0.0).head(5)
-```
-
-## `mask()`
-
-```python
-# Conditional replacement with .mask() (replaces matching rows with specified value)
-df["Segment"].mask(df["Segment"] == "Consumer", other="Individual B2C").head(5)
+# access `df.columns` and clean your column names 
+df.columns.str.strip().str.lower().str.replace(" ", "_")
 ```
 
 ## `query()`
 
+Works like boolean indexing but in SQL fashion. You can write your query or condition inside quotation almost as in SQL. This saves you the annoying `df[…]` statements and parenthese wrapping for multiple conditions.
+
 ```python
 # String expression filtering with .query() like in SQL 
-df.query("Category == 'Technology' and Sales > 300.0 and Discount == 0.0").head(3)
-```
+df.query("Category == 'Technology' and Sales > 300.0 and Discount == 0.0")
 
-… to be continued
+# the above replaces this
+df[(df["Category"]=='Technology') & (df["Sales"]>300) & (df["Discount"] == 0.0)]
+```
