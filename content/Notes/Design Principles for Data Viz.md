@@ -2,7 +2,7 @@
 publish: true
 title: Design Principles for Data Viz
 created: 2026-09-27T07:41:04.156Z
-modified: 2026-09-29T12:04:18.441Z
+modified: 2026-10-12T03:53:11.831Z
 tags:
   - topic/communication
 ---
@@ -15,11 +15,15 @@ Data visualization lies at the intersection of statistics and design and is conc
 
 **Principles:** _Miller’s Law, Recognition over Recall, Picture Superiority Effect, Iconic Representation, Progressive Disclosure._
 
-To communicate data without overwhelming the users ‘mental hardware’, design must accommodate fundamental cognitive limitations. According to [**Miller’s Law**](https://en.wikipedia.org/wiki/The_Magical_Number_Seven,_Plus_or_Minus_Two), human working memory can only hold a few chunks of information at once, making it essential to manage information density.
+To communicate data without overwhelming the users ‘mental hardware’, design must accommodate fundamental cognitive limitations. According to [**Miller’s Law**](https://en.wikipedia.org/wiki/The_Magical_Number_Seven,_Plus_or_Minus_Two), human working memory can only hold a few chunks of information ($7 \pm 2$) at once, making it essential to manage information density.
 
-Human memory heavily favors [**Recognition over Recall**](https://research-collective.com/recognition-over-recall/), meaning users process visual controls far more efficiently than retrieving commands or information from memory. This is amplified by the [**Picture Superiority Effect**](https://en.wikipedia.org/wiki/Picture_superiority_effect), which demonstrates that concepts encoded as visual images or charts are recalled significantly better than plain text.
+Human memory heavily favors [**Recognition over Recall**](https://research-collective.com/recognition-over-recall/), meaning that people are much better at recognizing familiar objects, options, or actions than recalling information from memory.
 
-To leverage this, designers use [**Iconic Representation**](https://www.gabrielgreenberg.com/docs/mit-iconicity.pdf), employing pictorial symbols to make key features instantly recognizable reducing the need to read dense texts. Finally, [**Progressive Disclosure**](https://en.wikipedia.org/wiki/Progressive_disclosure) manages overall cognitive load by layering data —presenting high-level overviews first and revealing granular details only when requested by the viewer.
+This is amplified by the [**Picture Superiority Effect**](https://en.wikipedia.org/wiki/Picture_superiority_effect), in which pictures and images are remembered more easily than words. The preference for imagery has many psychological implications and good communication is addressing this effect deliberately.
+
+Designers use for example [**Iconic Representation**](https://www.gabrielgreenberg.com/docs/mit-iconicity.pdf), by employing symbols and make key features instantly recognizable.
+
+Finally, [**Progressive Disclosure**](https://en.wikipedia.org/wiki/Progressive_disclosure) manages overall cognitive load by layering data —presenting high-level overviews first and revealing granular details only when requested by the viewer.
 
 ## Cognitive Biases & Spatial Intuition
 

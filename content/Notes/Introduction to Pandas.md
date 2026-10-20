@@ -2,7 +2,7 @@
 publish: true
 title: Introduction to Pandas
 created: 2026-10-07T12:55:51.729Z
-modified: 2026-10-10T14:02:05.819Z
+modified: 2026-10-18T10:44:11.275Z
 tags:
   - status/draft
 ---
@@ -35,7 +35,7 @@ The axis is a parameter in many functions to specify if you work along rows (hor
 
 In pandas, `axis = 0` refers to **rows** and `axis = 1` refers to **columns**.
 
-![[Introduction to Pandas - Axis.png]]
+![[images/Introduction to Pandas - Axis.png]]
 
 - `axis=0` ↓: Operates along the **0**-th dimension (rows).
 - `axis=1` →: Operates along the **1**-st dimension (columns).
@@ -292,7 +292,7 @@ df.values
 
 # Descriptive Statistics
 
-You’ve checked the metadata (attributes) and seen some summary statistics with `describe()`. Next you may want to investigate some columns (variables) in depth with descriptive statistics and pandas has a lot of [functions](https://pandas.pydata.org/pandas-docs/stable/user_guide/basics.html#descriptive-statistics) for this, here is a just few of them:
+You’ve checked the metadata (attributes) and seen some summary statistics with `describe()`. Next you may want to investigate some columns (variables) in depth with descriptive statistics, pandas has a lot of [functions](https://pandas.pydata.org/pandas-docs/stable/user_guide/basics.html#descriptive-statistics) for this, here is a just few of them:
 
 ```python
 # Frequency counts for categorical variables
@@ -527,7 +527,7 @@ df.columns.str.strip().str.lower().str.replace(" ", "_")
 
 ## `query()`
 
-Works like boolean indexing but in SQL fashion. You can write your query or condition inside quotation almost as in SQL. This saves you the annoying `df[…]` statements and parenthese wrapping for multiple conditions.
+Works like boolean indexing but in SQL fashion. You can write your query or condition inside quotation marks almost as in SQL. This saves you the verbose `df[…]` statements and parentheses for multiple conditions.
 
 ```python
 # String expression filtering with .query() like in SQL 
