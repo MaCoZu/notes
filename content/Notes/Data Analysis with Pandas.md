@@ -2,7 +2,7 @@
 publish: true
 title: Data Analysis with Pandas
 created: 2026-10-12T09:35:06.004Z
-modified: 2026-10-20T06:53:21.318Z
+modified: 2026-10-22T18:25:15.361Z
 tags:
   - status/draft
 ---
@@ -13,9 +13,9 @@ Again we will use the superstore dataset, to follow along you can [download the 
 
 # Handling DataFrames
 
-When you load a CSV or similar data into pandas the first time, it will often be the raw uncleaned tabular data you're going to analyze, transform and reorganize to your needs. As you progress in your analysis, you will mess things up, or want to store interim results in dedicated tables. If something breaks, and you did take any precautions you may have to run the whole analysis again. This calls for some housekeeping.
+When you load a CSV or similar data into pandas the first time, it will often be the raw uncleaned tabular data you're going to analyze. In your analysis you transform and reorganize the data to your needs. It is a good idea to store interim results in dedicated tables and build in some fallback points, as something always goes wrong.
 
-First understand that once you assigned data to a variable e.g.  `df = pd.read_csv("data.csv")` that variable is occupied. If you use the same variables name `df` again to assign something to it the old data stored in `df` is overwritten.
+First understand that once you assigned data to a variable e.g.  `df = pd.read_csv("data.csv")` that variable is occupied. If you assign something else to same variable `df` old data stored in `df` is overwritten.
 
 ```python
 # assign data to variable 'df'
@@ -31,9 +31,9 @@ df = pd.read_csv("data.csv", encoding='latin1')
 df = 2+5
 ```
 
-Frequently you mess up your data in your notebook. If you worked on your original data frame `df`, and build in a backstop you probably have to run all the notebook cells up to the point of the problem and fix it from there.
+Let’s say you worked on `df` and deep in the analysis you some strange transformation that messed up your data. Now you have to load the data again from the beginning and run all cells up to the point where things have gone adrift.
 
-But you can hedge against running everything from the start by working on copies and extracts of the original data frame. Make copies of your data frame `df_test = df` to do experiments or before making specific transformations and the like. You may also make copies at certain milestones, or store the results of an analysis.
+A better way is to build in backstops before making major transformations or after certain milestones. Make copies of the data for experiments and only after making sure your transformations works you remove the excess copies of your data and consolidate the steps.
 
 ```python
 df = pd.read_csv("data.csv") 
@@ -41,18 +41,19 @@ df = pd.read_csv("data.csv")
 # a subset DataFrame
 df_reduced = df[['Sales', 'Quantity', 'Discount', 'Profit']]
 
-# copy orignal df, do stuff on the copy copy, and rename
+# copy orignal df, do stuff on the copy copy
 df_2 = df
+
+# confirm that your transformation works before applying it on the original data
 df_2['Discount %'] = df_2['Discount'] * 100
-df_enhanced = df_2
 
 # intermediate analysis
 df_sales_by_cat = df.groupby("Category")[["Sales"]].mean()
 ```
 
-If something breaks now, you have points to return to. If you stored some interesting interim results, they are now at hand in a special variable.
+If something breaks now, you have points to return to. If you stored some interim results, they are now at hand in a special variable.
 
-How many backstops you want to build in is a trade-off between safety and cleanliness. The more points of return the messier your notebook. If you’re making a lot of copies, it is maybe time to start a new notebook and keep your notebooks focused on a few tasks only. Read on [here](https://coderpad.io/blog/data-science/mastering-jupyter-notebooks-best-practices-for-data-science/) to learn how to tame notebook chaos.
+How many backstops you want to build in is a trade-off between safety and cleanliness. The more points of return the messier your notebook. If you’re making a lot of copies, it is maybe time to start a new notebook and keep your notebooks focused on a few tasks only. Read [this](https://coderpad.io/blog/data-science/mastering-jupyter-notebooks-best-practices-for-data-science/) to learn how to tame notebook chaos.
 
 ## Data frame vs. actual file
 
@@ -122,6 +123,7 @@ df.groupby("Category")["Sales"].agg(["count", "mean", "median", "std"])
 | Furniture       | 2121  | 349.83 | 182.22 | 503.17  |
 | Office Supplies | 6026  | 119.32 | 27.41  | 382.18  |
 | Technology      | 1847  | 452.70 | 166.16 | 1108.65 |
+
 Pulling it all together `groupby()` can create complex summary tables like this:
 
 ```python
