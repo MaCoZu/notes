@@ -1,8 +1,8 @@
 ---
 publish: true
 title: Data Analysis with Pandas
-created: 2026-10-12T09:35:06.004Z
-modified: 2026-10-22T18:25:15.361Z
+created: 2026-10-24T17:15:51.123Z
+modified: 2026-10-24T18:47:54.140Z
 tags:
   - status/draft
 ---
@@ -51,19 +51,19 @@ df_2['Discount %'] = df_2['Discount'] * 100
 df_sales_by_cat = df.groupby("Category")[["Sales"]].mean()
 ```
 
-If something breaks now, you have points to return to. If you stored some interim results, they are now at hand in a special variable.
+If something breaks now, you have points to return to. If you stored some interim results, they are at hand in a special variable.
 
-How many backstops you want to build in is a trade-off between safety and cleanliness. The more points of return the messier your notebook. If you’re making a lot of copies, it is maybe time to start a new notebook and keep your notebooks focused on a few tasks only. Read [this](https://coderpad.io/blog/data-science/mastering-jupyter-notebooks-best-practices-for-data-science/) to learn how to tame notebook chaos.
+How many backstops you want to build in is a trade-off between safety and cleanliness. The more points of return the messier your notebook. If you make a lot of copies, it is maybe time to start a new notebook and keep your it focused on a few tasks only. Read on [here](https://coderpad.io/blog/data-science/mastering-jupyter-notebooks-best-practices-for-data-science/) for tips to tame notebook chaos.
 
 ## Data frame vs. actual file
 
-With original data frame, I mean the raw data loaded in your notebook, which is different from the actual file (CSV or otherwise) holding that data. A copy of the actual file should be stored away securely, to not overwrite it accidentally.
+The data frame in your notebook is different from the actual physical file (CSV or otherwise) holding that data. You should have a secure copy of it, preferably in a different directory, to avoid overwriting the raw data.
 
-In your notebooks you want to secure your raw data frame mostly to avoid loading it more than once, have a point of return if you messed up, and store interim results.
+The above precautions, of making copies of your data inside your notebook, are meant to protect against rerunning your analysis or loading the file repeatedly.
 
 # Group by
 
-This function can group rows in a column, typically some category like ‘Region’ or ‘Segment’ and aggregate a specified field for each group. Aggregation may be statistical functions (`mean()`, `sum()` …) or the size of the group →  `size()`.
+This function can group rows by a category. Typically, you will group by something like ‘Region’, which will lump together all the records with the same value in the column ‘Region’. Since the group alone is just a collection of rows, you need to apply an aggregation function to the groups summarizing them based on a specified field. The aggregation may be statistical functions (`mean()`, `sum()` …) applied to a numerical filed like ‘Profit’ or the size of the groups can be counted with `size()`.
 
 ```python
 # mean of discount per 'Category'
@@ -73,9 +73,9 @@ df.groupby("Category")["Discount"].mean()
 df.groupby("Category").size()
 ```
 
-If you are missing the aggregation function after grouping you will see a something like this `<pandas.api.typing.DataFrameGroupBy object at 0x7bc71b272340>` which tells you there is a group by object in memory, waiting to the aggregated.
+If you are missing the aggregation function after grouping you will see something like this `<pandas.api.typing.DataFrameGroupBy object at 0x7bc71b272340>` it tells you there is a group by object in memory, waiting to the aggregated.
 
-Aggregation summarizes multiple records in the group by the chosen variables and aggregations. It is possible to group by more than one category, effectively creating subgroups. Mind the order of the categories as it will define your breakdown levels.
+It is possible to group by more than one category, effectively creating subgroups. Mind the order of the categories as it will define your breakdown levels.
 
 ```python
 df.groupby(["Segment", "Region"])["Sales"].mean()
@@ -134,36 +134,72 @@ df.groupby(["Region", "Category"]).agg({
 })
 ```
 
+# Cross table
+
+The  `crosstab()` method is built specifically for **categorical frequency distributions (contingency tables)**. It shows the interrelation of between two variables, at the cross-section of rows and columns. Each cell contains the count (or percentage) of observations that fall into both categories simultaneously. It provides a picture of the interrelation between two variables and possible interactions between them.
+
+With the parameter `margins=True` totals of rows and columns are displayed. Combined with `normalize=...` which either calculates the row-wise `normalize='index'`, column-wise `normalize='columns'` or global percentages, certain aspects of the relations can be highlighted.
+
+Setting `margins=True` shows row-wise (sub)totals. If we look at percentage values (normalized), the values at the right margin give us the share each row has over all rows and the margin at the bottom displays the share of 100% for each column.
+
+```python
+pd.crosstab(
+    index=df_clean['Category'],  
+    columns=df_clean['Segment'], 
+    normalize=True , 
+    margins=True).round(2)
+```
+
+![[Data Analysis with Pandas - crosstab.png]]
+
+In the example the Category ‘Furniture’ has a share of 21% of all Categories (along the index), and the Segment ‘Consumer’ takes up 52% among all Segments (columns). This can be read in the respective margins.
+
+At the intersection of Office Supplies (index) and Consumer segment (column) you will find that, 31% of all products belong to this joint group.
+
+Using the `values=` and `aggfunc=` parameters crosstab can not just do a frequency count but also aggregate other numerical fields (`values`) for example Sales and additionally use different summary functions.
+
+```python
+pd.crosstab(
+    index=[df_clean['Category'], df_clean['Segment']],
+    columns=df_clean['Region'],
+    values=df_clean["Sales"],
+    aggfunc='sum',
+    normalize="columns")
+```
+
+![[Data Analysis with Pandas - crosstab2.png]]
+
 # Pivot Table
 
-Similar to the `groupby()` logic from above with `pivot_table()` you get a cross table with summary figures. Pivot tables come with features like totals at the margins and handling of missing values.
+Similar to `crosstab()` pivot tables creates 2D summary matrices showing the joint distribution of two variables. Here the focus is on a specified value, other than the frequency, that is being summarized for the cross-sections of index and columns.
+
+The default aggregation is the `mean`, while `values=...` specifies the field to aggregate. With `index=...` and `columns=...` you define the variable for the rows and columns.
 
 ```python
-# aggregation function defualts to mean
-pd.pivot_table(df, values="Sales", index="Region", margins=True, margins_name="Overall Mean")
+df.pivot_table(
+        index='Category',
+        columns='Segment',
+        values='Sales',
+        ).round()
 ```
 
-|              | Sales  |
-| ------------ | ------ |
-| Region       |        |
-| Central      | 215.77 |
-| East         | 238.33 |
-| South        | 241.80 |
-| West         | 226.49 |
-| Overall Mean | 229.85 |
+![[Data Analysis with Pandas - pivot table-2.png]]
 
-The aggregation is the `mean` by default, `values=...` specifies the field to aggregate and `index=...` produces groups of the named category field in the rows. Once you add further categories in the `columns=...` you get a table where the groups in the rows and in the columns are jointly summarized. You will find the joint aggregation figure, of the two categories you are interested in, at the intersection of the corresponding row and column.
+Pivot tables come with the margin features, which we know from crosstab and a paremter for handling missing values.
 
 ```python
-pd.pivot_table(df,
-               values=["Sales"],
-               columns=["Category"],
-               index="Region",
-               aggfunc=["sum"],
-               margins=True,
-               margins_name="Total Sales").round(1)
+df.pivot_table(
+    index='Category',
+    columns='Segment',
+    values='Sales',
+    aggfunc='sum',
+    margins=True,
+    dropna=True,
+    ).round(1)
 ```
 
-![[Data Analysis with Pandas - pivot table.png]]
+![[Data Analysis with Pandas - pivot table 2.png]]
 
-For example the sum of Sales in the Category ‘Technology’ in the ‘South’ Region is \$148771.9. In the code above the fields `values`, `columns`, `index` and `aggfunc` can take list of attributes producing multi-index pivot tables. But with growing complexity the usefulness of pivot tables diminishes, that is to say: keep it simple.
+For example the sum of Sales in the Category ‘Technology’ in the ‘Home Office’ Segement is \$183304.
+
+Pivot tables can be extended in the all dimensions. Index, columns, values, and aggregation functions take more than one value. But with growing complexity the usefulness of pivot tables diminishes.
