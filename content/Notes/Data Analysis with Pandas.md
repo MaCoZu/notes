@@ -2,7 +2,7 @@
 publish: true
 title: Data Analysis with Pandas
 created: 2026-10-24T17:15:51.123Z
-modified: 2026-10-24T18:47:54.140Z
+modified: 2026-10-31T10:08:41.977Z
 tags:
   - status/draft
 ---
@@ -150,7 +150,7 @@ pd.crosstab(
     margins=True).round(2)
 ```
 
-![[Data Analysis with Pandas - crosstab.png]]
+![[images/Data Analysis with Pandas - crosstab.png]]
 
 In the example the Category ‘Furniture’ has a share of 21% of all Categories (along the index), and the Segment ‘Consumer’ takes up 52% among all Segments (columns). This can be read in the respective margins.
 
@@ -167,7 +167,7 @@ pd.crosstab(
     normalize="columns")
 ```
 
-![[Data Analysis with Pandas - crosstab2.png]]
+![[images/Data Analysis with Pandas - crosstab2.png]]
 
 # Pivot Table
 
@@ -183,7 +183,7 @@ df.pivot_table(
         ).round()
 ```
 
-![[Data Analysis with Pandas - pivot table-2.png]]
+![[images/Data Analysis with Pandas - pivot table-2.png]]
 
 Pivot tables come with the margin features, which we know from crosstab and a paremter for handling missing values.
 
@@ -198,8 +198,50 @@ df.pivot_table(
     ).round(1)
 ```
 
-![[Data Analysis with Pandas - pivot table 2.png]]
+![[images/Data Analysis with Pandas - pivot table 2.png]]
 
 For example the sum of Sales in the Category ‘Technology’ in the ‘Home Office’ Segement is \$183304.
 
 Pivot tables can be extended in the all dimensions. Index, columns, values, and aggregation functions take more than one value. But with growing complexity the usefulness of pivot tables diminishes.
+
+# xs() - select a cross-section
+
+We have seen three variants to make data frames with multiple indices (MultiIndex). Selecting data at a particular level of the MultiIndex can be done with `xs()` which fetches a cross-section from the original data frame corresponding to the selected index levels.
+
+Let’s say you created this complex MultiIndex:
+
+```python
+multiindex = df.groupby(["Region", "Category"]).agg({
+    "Sales": ["sum", "mean"],
+    "Profit": ["sum", "min", "max"],
+    "Quantity": "sum"
+})
+
+multiindex
+```
+
+![[Data Analysis with Pandas - MultiIndex.png]]
+
+But you’re only interested in the ‘South’ region. So you only want the three Categories under `South`. The `xs()` method by default — if no parameters are defined — looks into the first level `level=0` of the indices (`axis=0`), that is the outermost of the indices, here \`Region.
+
+Therefore, `xs('South')`, searches for `South` in the index and returns only the rows belonging to this region, omitting the other regions.
+
+```python
+# defaults to axis=0, level=0
+multiindex.xs("South") 
+```
+
+![[Data Analysis with Pandas - MultiIndex South.png]]
+
+To choose a value from second level of the columns, specify the corresponding parameters.
+
+The axis containing column labels is `axis=1`. To choose only one of the summary statistics on the second level of the column indices define label: `'sum'`, axis and level to choose from: `axis=1` and `level=1`.
+
+Notice that the label of the selected level is omitted.
+
+```python
+# selects all 'sum' columns (axis=1) on the second level (level=1)
+multiindex.xs("sum", axis=1, level=1) 
+```
+
+![[Data Analysis with Pandas - MultiIndex axis=1 level=1.png]]
