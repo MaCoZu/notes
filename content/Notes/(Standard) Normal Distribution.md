@@ -2,15 +2,15 @@
 publish: true
 title: Normal Distribution
 created: 2026-05-02T14:06:27.799Z
-modified: 2026-11-06T12:51:36.007Z
+modified: 2026-11-06T13:02:45.318Z
 ---
-
-# Normal Distribution
 
 Many data derived from nature or psychology tend to approximate a normal distribution. Furthermore, most parametric statistical tests, such as the t-test for comparing means or Pearson’s correlation coefficient for examining relationships between variables, assume that the data follow a normal distribution. When this assumption is not met, researchers must resort to non-parametric tests, which, although useful, are statistically less powerful and limit the accuracy of conclusions.
 
 The **normal distribution** $\mathcal{N}(\mu, \sigma^2)$ is a continuous, symmetric bell-shaped probability density function:
+
 $f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{- \frac{1}{2}\left( \frac{x - \mu}{\sigma} \right) ^{2}} \quad ,x \in \mathbb{R}$
+
 It is fully defined by two parameters: $\mu$ (mean, location) and $\sigma > 0$ (standard deviation, scale).
 
 It is symmetric around $\mu$, unimodal, and asymptotically approaches zero without bound.
@@ -28,6 +28,7 @@ Scaling $\sigma$ stretches/compresses without changing symmetry.
 # Standard Normal Distribution
 
 The **standard normal distribution** (or **z-distribution**) is a continuous probability distribution with mean 0 and standard deviation 1, defined by its probability density function:
+
 $f(x) = \frac{1}{1 \sqrt{2\pi}} e^{- \frac{1}{2}\left( \frac{x - 0}{1} \right) ^{2}} \quad = \quad \frac{1}{\sqrt{2\pi}} e^{-\frac{x^{2}}{2}}\frac{1}{\sqrt{2\pi}} e^{-\frac{z^2}{2}}ϕ(z)$
 
 Any normal distribution $\mathcal{N}(\mu, \sigma^2)$ is a linear transformation of the standard normal.
@@ -57,6 +58,7 @@ Because we standardized the sampling distribution into standard error units, we 
 # Connection to the Central Limit Theorem (CLT)
 
 The CLT states that the **sampling distribution of the sample mean** approaches a normal distribution as the sample size $n$ increases, regardless of the population distribution (as long as it has finite mean and variance). Formally, for independent identically distributed random variables $X_1, \dots, X_n$ with mean $\mu$ and variance $\sigma^2$,
+
 $\sqrt{n} \left( \bar{X}_n - \mu \right) \xrightarrow{d} \mathcal{N}(0, \sigma^2)$
 
 This makes the normal distribution the **default assumption** for sample averages and sums in large samples.
