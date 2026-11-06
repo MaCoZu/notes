@@ -2,7 +2,7 @@
 publish: true
 title: Data Analysis with Pandas
 created: 2026-10-24T17:15:51.123Z
-modified: 2026-10-31T10:08:41.977Z
+modified: 2026-11-06T12:54:07.669Z
 tags:
   - status/draft
 ---
@@ -206,7 +206,7 @@ Pivot tables can be extended in the all dimensions. Index, columns, values, and 
 
 # xs() - select a cross-section
 
-We have seen three variants to make data frames with multiple indices (MultiIndex). Selecting data at a particular level of the MultiIndex can be done with `xs()` which fetches a cross-section from the original data frame corresponding to the selected index levels.
+We have seen three variants to make data frames with multiple indices (MultiIndex). Selecting data at a particular level of the MultiIndex can be done with `xs()` which fetches a cross-section from the MultiIndex corresponding to the selected index levels.
 
 Let’s say you created this complex MultiIndex:
 
@@ -220,7 +220,7 @@ multiindex = df.groupby(["Region", "Category"]).agg({
 multiindex
 ```
 
-![[Data Analysis with Pandas - MultiIndex.png]]
+![[images/Data Analysis with Pandas - MultiIndex.png]]
 
 But you’re only interested in the ‘South’ region. So you only want the three Categories under `South`. The `xs()` method by default — if no parameters are defined — looks into the first level `level=0` of the indices (`axis=0`), that is the outermost of the indices, here \`Region.
 
@@ -231,7 +231,7 @@ Therefore, `xs('South')`, searches for `South` in the index and returns only the
 multiindex.xs("South") 
 ```
 
-![[Data Analysis with Pandas - MultiIndex South.png]]
+![[images/Data Analysis with Pandas - MultiIndex South.png]]
 
 To choose a value from second level of the columns, specify the corresponding parameters.
 
@@ -244,4 +244,4 @@ Notice that the label of the selected level is omitted.
 multiindex.xs("sum", axis=1, level=1) 
 ```
 
-![[Data Analysis with Pandas - MultiIndex axis=1 level=1.png]]
+![[images/Data Analysis with Pandas - MultiIndex axis=1 level=1.png]]
